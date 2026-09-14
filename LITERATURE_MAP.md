@@ -1,18 +1,18 @@
-# LITERATURE MAP v0.2
+# LITERATURE MAP v0.3
 
-> MASTER merge after first-wave Search rounds CE01 / PE01 / LM01, 2026-09-14.
-> Status is **first-wave map**, not final screening or reading synthesis. Representative IDs below are indexed seeds; many additional candidates remain in Search handoffs.
+> MASTER state after first SEARCH wave + first SCREEN wave. Canonical decisions here supersede earlier scaffold wording. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
 
 ## Map conventions
-- Coverage: `UNSEARCHED / SEARCHING / PARTIAL / SATURATED`
-- Evidence discipline: paper facts require `[原文]` or `[Web核验]`; map interpretation is `[AI判断]`.
-- Encirclement, adversarial PE, allocation, and learning are kept distinct unless a paper explicitly bridges them.
-- `MUST READ` in the index remains provisional until SCREEN confirms assumptions.
+
+Coverage status: `UNSEARCHED / ACTIVE / PARTIAL / SATURATED`.
+
+Screening decisions: `MUST READ / MAP / ARCHIVE`.
+
+A `MUST READ` paper is not automatically in the immediate READ queue; `READING_LEDGER.md` controls queue timing.
 
 ---
 
 # 1. Multi-Agent / UAV Swarm Foundations
-First-wave searches were task-centered rather than foundation-centered. These nodes remain intentionally open.
 
 ## 1.1 Distributed control & consensus
 **Coverage:** UNSEARCHED
@@ -22,334 +22,283 @@ First-wave searches were task-centered rather than foundation-centered. These no
 
 ## 1.3 Coverage control / Voronoi / Lloyd
 **Coverage:** UNSEARCHED
-**Bridge seed:** P0011 uses Voronoi partitioning for dynamic target allocation + encirclement, but this is not a coverage-control genealogy search.
 
 ## 1.4 Communication & interaction topology
 **Coverage:** UNSEARCHED
-**Bridge seeds:** P0005, P0031, P0038.
 
 ## 1.5 Task allocation / coalition formation
 **Coverage:** UNSEARCHED
-**Bridge seeds:** P0011, P0024–P0027, P0037, P0042.
 
 ## 1.6 Collision avoidance / CBF / MPC
 **Coverage:** UNSEARCHED
-**Bridge seeds:** P0008, P0013, P0041.
 
 ---
 
 # 2. Classical Encirclement / Enclosing / Circumnavigation
 
+**Overall coverage:** PARTIAL
+
 ## 2.1 Static-target encirclement
 **Coverage:** PARTIAL
-**Representative papers:** P0002, P0003, P0004, P0007.
-**Canonical concepts:** cyclic pursuit; distributed target enclosing; bearing/range-based surrounding; invariance/reachability arguments.
-**Known assumptions:** many canonical papers use prescribed standoff radius/spacing and geometric enclosure rather than an adversarial escape game.
-**Open bottleneck:** translate ring/enclosure guarantees into actual no-escape/capture conditions.
+
+Representative screened nodes: P0003, P0004.
+
+[AI判断] Classical literature already contains distributed/local relative-measurement enclosing and formal convergence. Important lexical correction: `target-capturing` in P0003 means geometric enclosing formation, not PE-style winning/capture.
 
 ## 2.2 Moving-target encirclement
 **Coverage:** PARTIAL
-**Representative papers:** P0005, P0006, P0008, P0012.
-**Canonical concepts:** moving-target observers/estimators, relative sensing, moving circular formation.
-**Open bottleneck:** maneuvering adversaries with explicit strategic escape rather than exogenous motion.
+
+Representative screened nodes: P0008, P0009, P0012.
 
 ## 2.3 Distributed / local-information encirclement
 **Coverage:** PARTIAL
-**Representative papers:** P0004, P0005, P0007, P0008, P0009, P0010.
-**Known assumptions:** “distributed” ranges from local sensing/neighbor exchange to decentralized control with target estimates; it is not automatically equivalent to CoCap-style local enemy observability.
-**Open bottleneck:** local FOV/occlusion + target loss + subgroup switching under constrained communication.
 
-## 2.4 Obstacles / boundaries / safety
+Representative screened nodes: P0004, P0008, P0009.
+
+[AI判断] “distributed” and “partial observation” must remain separate axes. P0008 is decentralized but reconstructs globally relevant quantities through distributed estimation. P0004 contains genuine finite sensing-range structure, but does not solve unknown-target exploration.
+
+## 2.4 Obstacles / safety / boundaries
 **Coverage:** PARTIAL
-**Representative papers:** P0008, P0013.
-**Finding:** first-wave literature is much stronger on inter-agent collision/connectivity safety than on using walls/boundaries/obstacles as strategic encirclement geometry.
-**Open bottleneck:** boundary-assisted capture/escape-sector geometry in clutter.
+
+Representative screened node: P0013.
+
+[AI判断] Current encirclement search has stronger evidence for inter-agent collision/safety than for obstacles or boundaries used as strategic enclosure geometry. Literal boundary-assisted capture remains undercovered.
 
 ## 2.5 Multi-target encirclement & allocation
 **Coverage:** PARTIAL
-**Representative paper:** P0011.
-**Critical distinction:** aggregate/group-target enclosure (surround centroid/convex hull) ≠ true target-wise assignment/subgroup resource allocation.
-**Open bottleneck:** dynamic recruitment, coalition sizing, reassignment after capture/loss/new arrivals.
 
-## 2.6 Persistent / post-capture task continuation
+Representative screened node: P0011.
+
+[AI判断] Split this branch into:
+- **aggregate / whole-group enclosure** — surround a target set, centroid, polygon, or outer group;
+- **target-wise allocation / subgroup recruitment** — assign agents or coalitions to individual targets.
+
+P0011 is valuable but does not by itself settle the target-wise dynamic subgroup problem.
+
+## 2.6 Persistent / post-capture continuation
 **Coverage:** PARTIAL but weak
-**Representative paper:** P0010.
-**Finding:** persistent concurrent monitoring/patrol + encirclement exists; explicit `search/coverage → capture → post-capture recovery → resume coverage` was not found as a mature classical-control lineage.
-**CoCap relevance:** this remains a potentially important problem-level gap.
 
-## 2.7 Limited sensing / FOV / relative-only encirclement
-**Coverage:** PARTIAL
-**Representative papers:** P0006, P0007, P0009, P0012, P0013.
-**Finding:** range-only, bearing-only, GPS-free and explicit FOV-constrained encirclement are real subliteratures; FOV genealogy is still shallow.
+Representative screened node: P0010.
 
-## 2.8 UAV / nonholonomic / realistic dynamics
+[AI判断] P0010 is strong evidence for **concurrent patrol/monitoring + encirclement**, but not for `capture → finish → return to coverage/search`. Post-capture recovery remains a genuine gap candidate.
+
+## 2.7 Limited sensing / FOV / bearing / range
 **Coverage:** PARTIAL
-**Representative papers:** P0004, P0007, P0008, P0009, P0012.
-**Open bottleneck:** combine realistic UAV dynamics, strict local sensing, clutter, multi-target allocation and persistent tasks in one system.
+
+Representative screened nodes: P0004, P0009, P0012.
+
+[AI判断] Any claim that local sensing/FOV-constrained encirclement is new is untenable. The open question is the harder combination of intermittent target discovery, constrained communication, multi-target allocation, strategic evasion, and persistent task switching.
+
+## 2.8 Realistic / nonholonomic / UAV dynamics
+**Coverage:** PARTIAL
+
+Representative screened nodes: P0004, P0008, P0009, P0012.
 
 ---
 
-# 3. Pursuit–Evasion (PE)
+# 3. Pursuit–Evasion Foundations
+
+**Overall coverage:** PARTIAL-to-strong first skeleton; not saturated.
 
 ## 3.1 Classical differential games
-**Coverage:** PARTIAL-to-strong first-wave
-**Representative papers:** P0014, P0015.
-**Canonical concepts:** games of kind/degree, Isaacs condition, barriers, open-loop vs feedback solution concepts.
-**Warning:** “capture” in PE means a strategic terminal event; it is not interchangeable with geometric enclosing.
-
-## 3.2 Reach-avoid / HJI / viability
-**Coverage:** PARTIAL-to-strong
-**Representative papers:** P0018, P0019, P0024.
-**Canonical concepts:** HJI reachable/winning sets; viscosity solutions; target-vs-avoid objectives; pairwise reachability decomposition.
-**Open bottleneck:** high-dimensional/local-information/heterogeneous dynamics and viability genealogy remain incomplete.
-
-## 3.3 Capture / winning / dominance regions
-**Coverage:** PARTIAL-to-strong
-**Representative papers:** P0020, P0021, P0023.
-**Finding:** capture region, winning region, reach-avoid set and dominance region are not synonyms; information pattern and obstacles can change the claim.
-
-## 3.4 Apollonius geometry / interception
-**Coverage:** PARTIAL-to-strong
-**Representative paper:** P0021.
-**Finding:** clean Apollonius results depend strongly on simple motion, speed ratio, full information, obstacle-free geometry and capture-radius assumptions.
-**Open bottleneck:** local/noisy sensing, nonholonomic vehicles, positive capture radius and obstacles.
-
-## 3.5 Multi-pursuer single-evader
-**Coverage:** PARTIAL-to-strong
-**Representative papers:** P0022, P0023, P0028.
-**Finding:** speed disadvantage is not by itself decisive: favorable initial enclosure/cardinality/environment topology can restore capture guarantees.
-
-## 3.6 Multi-pursuer multi-evader
-**Coverage:** PARTIAL-to-strong
-**Representative papers:** P0024, P0026, P0027.
-**Open bottleneck:** NvM + obstacles + partial information + realistic UAV dynamics.
-
-## 3.7 PE task allocation / coalition assignment
-**Coverage:** PARTIAL-to-strong
-**Representative papers:** P0024, P0025, P0026, P0027, P0029.
-**Clear genealogy:** pairwise winning/capture certificates → matching / binary assignment / coalition allocation → guidance.
-**CoCap relevance:** strongest classical/theoretical source for principled support recruitment and target allocation.
-
-## 3.8 Obstacles / constrained environments / environmental dynamics
 **Coverage:** PARTIAL
-**Representative papers:** P0020, P0022, P0024, P0029.
-**Open bottleneck:** unknown/dynamic/nonconvex environments and asymmetric mobility constraints.
 
-## 3.9 Partial / asymmetric information PE
-**Coverage:** PARTIAL and NOT SATURATED
-**Finding:** first-wave search validates this as a real branch, but local FOV, bearing/range-only, delays/noise, belief-state/incomplete-information, deception and communication-limited team guarantees need a dedicated round.
+P0015 is retained as MAP-level genealogy organizer after SCREEN.
+
+## 3.2 HJI / reachability / reach-avoid / viability
+**Coverage:** PARTIAL-to-strong
+
+Representative screened nodes: P0018, P0019.
+
+[AI判断] Corrected structure:
+- P0018: backward reachable set / force target entry;
+- P0019: reach target while satisfying avoid/state constraints.
+
+`reachable set` and `reach-avoid set` are not synonyms.
+
+## 3.3 Capture / winning / dominance / barrier geometry
+**Coverage:** PARTIAL-to-strong
+
+Representative screened nodes: P0020, P0021, P0025.
+
+[AI判断] Keep distinct:
+- joint-state winning/reach-avoid set;
+- physical-space dominance region;
+- barrier separating game outcomes;
+- Apollonius geometry under simple-motion assumptions.
+
+P0021 is MAP after SCREEN: useful precision theorem, not a universal capture certificate.
+
+## 3.4 Obstacles / constrained PE
+**Coverage:** PARTIAL
+
+Representative screened node: P0020.
+
+[AI判断] Obstacles can alter strategic dominance/interception geometry itself; they are not merely a downstream collision-avoidance add-on.
+
+## 3.5 Multi-pursuer / multi-evader allocation
+**Coverage:** PARTIAL-to-strong
+
+Representative screened nodes: P0024, P0025.
+
+Two complementary branches are now explicit:
+1. **pairwise numerical HJI certificates → matching** (P0024);
+2. **analytical barriers / coalition winning regions → assignment** (P0025).
+
+These are the strongest theory sources for CoCap-style support recruitment / allocation abstractions, but their guarantees assume much cleaner information and dynamics than CoCap.
+
+## 3.6 Encirclement → capture bridge
+**Coverage:** PARTIAL but real
+
+Representative screened node: P0028.
+
+[AI判断] The valid bridge is not `ring formation → capture`. P0028 supports:
+
+`closed angular enclosure + maintained geometry + positive capture radius + suitable speed/cardinality/initial-condition assumptions + inward approach → guaranteed capture`.
+
+This is directly relevant to escape-gap blocking and capture-support logic.
 
 ---
 
 # 4. Learning-Based Pursuit / Encirclement
 
-## 4.1 Value-based / minimax / distributional lineage
-**Coverage:** PARTIAL
-**Finding:** pursuit-specific Q-learning exists, but a structurally important IQN/distributional pursuit lineage was not established in LM01.
-**Gap:** do not backfill with generic DQN/IQN papers.
+**Overall coverage:** PARTIAL
 
-## 4.2 Actor–critic: DDPG / SAC / related
-**Coverage:** PARTIAL
-**Representative papers:** P0031, P0032, P0039.
-**Finding:** learning is used for continuous cooperative control, communication/opponent modeling and decentralized execution; TD3-specific structural lineage remains thin.
+## 4.1 Organizing principle
 
-## 4.3 PPO / MAPPO and on-policy MARL
-**Coverage:** PARTIAL
-**Representative papers:** P0036.
-**Finding:** useful for partially observed UAV pursuit and curriculum/environment adaptation; generic MAPPO use alone is not a contribution.
+[AI判断] Do not organize this branch primarily by backbone name. More informative pursuit-specific axes are **which classical assumption is relaxed or which system layer is learned**.
 
-## 4.4 Value decomposition: QMIX / variants
-**Coverage:** PARTIAL
-**Representative papers:** P0037, P0038.
-**Finding:** strongest pursuit-specific value-decomposition work injects game geometry/roles or local graph perception rather than merely replacing the backbone.
+## 4.2 Decentralized policy execution under vehicle constraints
+Representative: P0032 — MUST READ, but not immediate first-wave queue.
 
-## 4.5 CTDE & centralized critics
-**Coverage:** PARTIAL
-**Representative papers:** P0031, P0034, P0038.
-**Warning:** decentralized execution ≠ local sensing ≠ communication-free execution.
+[AI判断] Decentralized actors can still depend on globally complete training data, full teammate state, external localization, or offboard execution.
 
-## 4.6 Graph / GNN / GAT MARL
-**Coverage:** PARTIAL
-**Representative papers:** P0034, P0038, P0042.
-**Finding:** graph aggregation is increasingly used for variable neighborhoods/local observation and allocation.
+## 4.3 Search/tracking roles + multi-target UAV pursuit
+Representative: P0033 — MUST READ.
 
-## 4.7 Transformer / attention-based MARL
-**Coverage:** PARTIAL
-**Representative papers:** P0035, P0036.
-**Finding:** Transformer/attention matters when it addresses variable team/target cardinality, prediction or entity aggregation; architecture choice alone is not sufficient novelty.
+[AI判断] Strong novelty-boundary predecessor, but roles are fixed and target state is propagated through communication; this is not dynamic coverage↔capture gating.
 
-## 4.8 Learned communication / local messaging
-**Coverage:** PARTIAL
-**Representative papers:** P0031, P0039.
-**Open bottleneck:** rigorous separation of message content/range from globally shared target state.
+## 4.4 Literal local FOV / range / occlusion
+Representative: P0034 — MUST READ.
 
-## 4.9 Role / task / target allocation
-**Coverage:** PARTIAL
-**Representative papers:** P0033, P0035, P0037, P0042.
-**Critical distinction:** heterogeneous fixed roles, learned target selection, deterministic external assignment and differentiable learned allocation must be tracked separately.
+[AI判断] Local enemy discovery with finite distance/view angle/building occlusion already exists. P0034 shares detected target coordinates team-wide and uses a global-state critic, so `local discovery` is not the same as `strictly local target knowledge at execution`.
 
-## 4.10 Hierarchical / modular policies
-**Coverage:** PARTIAL
-**Representative paper:** P0042 as an allocation/control modular competitor.
-**Finding:** multiple pursuit papers now decompose allocation, maneuver and low-level control; the branch is real.
+## 4.5 Variable-cardinality multi-target encirclement / target prioritization
+Representative: P0035 — MUST READ.
 
-## 4.11 Imitation / self-supervision / pretraining
-**Coverage:** PARTIAL
-**Finding:** pursuit-specific examples exist, but first-wave indexed set prioritizes stronger structural nodes. Further screening should track whether pretraining solves sparse exploration/perception rather than just accelerates training.
+[AI判断] TERL is a major threat to broad claims about Transformer-based multi-target encirclement, target selection, or large-team generalization, but active targets are globally broadcast and evaders are heuristic.
 
-## 4.12 Self-play / adversarial curriculum
-**Coverage:** PARTIAL
-**Representative paper:** P0040.
-**Finding:** strategic learned opponents + real UAV execution are emerging, but usually 1v1; swarm/multi-target overlap is weak.
+## 4.6 Unknown clutter + physically meaningful actions + sim-to-real
+Representative: P0036 — MUST READ.
 
-## 4.13 Sim-to-real / real UAV deployment
-**Coverage:** PARTIAL
-**Representative papers:** P0032, P0033, P0036, P0040.
-**Open question:** onboard vs offboard inference, motion-capture/global target state and communications need SCREEN-level verification.
+[AI判断] Strong baseline for physical action / deployment claims; weaker on multi-target allocation and strategic evaders.
 
-## 4.14 Safety-constrained / CBF-RL pursuit
-**Coverage:** PARTIAL
-**Representative paper:** P0041.
-**Taxonomy action:** promoted from provisional to first-class node after independent pursuit-specific 2025–2026 evidence.
+## 4.7 Theory-/geometry-guided MARL
+Representative: P0037 — MUST READ; P0038 — MAP.
 
-## 4.15 Model-based / world-model / opponent-modeling pursuit RL
-**Coverage:** PARTIAL / provisional
-**Representative paper:** P0039.
-**Taxonomy action:** retain as provisional node; one strong 2026 multi-agent paper plus model-based interception evidence suggest a real frontier, but saturation is low.
+[AI判断] Combining Apollonius/dominance geometry with MARL is already established. Novelty, if any, must lie in harder assumptions or lifecycle integration rather than geometry-plus-RL alone.
+
+## 4.8 Strategic opponent learning / self-play
+Representative: P0040 — MUST READ, preprint caveat.
+
+[AI判断] Strong threat to claims around strategic learned evaders, self-play, and real-UAV pursuit; weak on swarm/multi-target allocation.
+
+## 4.9 Explicit target allocation + subgroup pursuit/control
+Representative: P0042 — MUST READ.
+
+[AI判断] Cross-domain AUV work is structurally one of the closest competitors because it couples differentiable allocation, subgroup pursuit, local observation and capture geometry. UAV-only novelty searches are insufficient.
+
+## 4.10 Learning review
+Representative: P0030 — MAP after SCREEN.
 
 ---
 
-# 5. CoCap-Near Problems
+# 5. Cross-Branch Bridges
 
-## 5.1 Multi-UAV + multi-target pursuit/encirclement
+## 5.1 Encirclement ↔ PE
 **Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0033, P0035; cross-domain P0042.
-**Current reading hypothesis:** no first-wave paper yet combines CoCap's full assumption bundle.
 
-## 5.2 Local enemy sensing / partial observability
+Strong nodes: P0012, P0028.
+
+Current synthesis:
+- geometric enclosure alone is insufficient;
+- actual capture depends on escape-direction closure plus dynamics/speed/capture-radius/initial geometry;
+- recent classical work already transitions from encirclement to interception, so novelty cannot rest on that transition alone.
+
+## 5.2 Classical control / PE ↔ RL
 **Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0009, P0034, P0038, P0036.
-**Novelty risk:** local sensing itself is not novel; strict FOV/occlusion pursuit already exists.
 
-## 5.3 Decentralized execution + constrained communication
-**Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0032, P0033, P0038.
-**Open issue:** SCREEN must normalize what each paper means by “decentralized.”
+Strong nodes: P0037 and supporting evidence from P0038.
 
-## 5.4 Dynamic capture / support / coverage roles
-**Coverage:** PARTIAL but weak
-**Closest seed:** P0033 has scout/tracker heterogeneity; it does not yet establish the full dynamic coverage-support-capture switching chain.
-**Potential gap:** dynamic support recruitment while other agents continue coverage remains undercovered.
+[AI判断] Classical theory contributes structured certificates/priors; RL contributes most where exact models and full information break down.
 
-## 5.5 Target allocation + encirclement gap allocation
-**Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0011, P0025, P0026, P0035, P0037, P0042.
-**Research opportunity:** combine PE winning/capture certificates with learned/local target-support allocation.
-
-## 5.6 Search / coverage → detection → capture
-**Coverage:** PARTIAL but weak
-**Closest indexed neighbor:** P0033.
-**Finding:** local-FOV pursuit and scout/tracker roles exist separately; a persistent distributed coverage→detection→capture loop remains uncommon.
-
-## 5.7 Capture → post-capture coverage recovery
-**Coverage:** NOT SATURATED / very weak
-**Closest indexed neighbor:** P0010 covers concurrent monitoring/patrol + encirclement, not the same post-capture recovery semantics.
-**Candidate CoCap gap:** remains credible after first-wave Search, but must survive dedicated follow-up.
-
-## 5.8 Obstacles / boundaries / escape sectors
-**Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0020, P0022, P0034, P0036.
-**Gap:** boundary/obstacle geometry as a strategic capture resource is much less mature than obstacle avoidance.
-
-## 5.9 Action interfaces / physical executability
-**Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0008, P0012, P0032, P0036, P0040.
-**Finding:** real or hardware-aligned UAV dynamics are now established; abstract point-mass action space cannot be assumed representative.
-
-## 5.10 Scalability / generalization / repeated arrivals
-**Coverage:** PARTIAL
-**Strongest indexed neighbors:** P0035, P0039, P0042.
-**Gap:** repeated arrivals + local information + persistent multi-target role reassignment remains thin.
-
----
-
-# 6. Cross-Branch Bridges
-
-## 6.1 Encirclement ↔ PE
-**Coverage:** PARTIAL, genuine bridge family found
-**Representative papers:** P0012, P0028, P0029.
-**Key result:** geometric enclosure can become a sufficient capture mechanism only under explicit speed/cardinality/initial-geometry/dynamics assumptions. “Encirclement” alone is not a PE guarantee.
-**Terminology warning:** `target-capturing`, `hunting`, `fencing`, `enclosure` and `interception` are lexical false friends unless the terminal objective/guarantee is checked.
-
-## 6.2 Classical control / game structure ↔ RL
-**Coverage:** PARTIAL
-**Representative papers:** P0037, P0038, P0041.
-**Finding:** the strongest bridge is not “RL replaces controller,” but classical geometry, capture certificates, CBF constraints or expert guidance shaping learning.
-
-## 6.3 PE geometry ↔ learned allocation
+## 5.3 PE geometry ↔ learned allocation
 **Coverage:** PARTIAL-to-strong seed set
-**Representative papers:** classical P0024–P0026; learning P0037, P0038, P0042.
-**Research question:** can pairwise winning/capture certificates or escape-gap geometry guide decentralized target/support recruitment under local sensing?
+
+Strong chain: P0019 → P0024/P0025 → P0037/P0042.
+
+[AI判断] Candidate CoCap direction: replace brittle binary capturable/not-capturable edges with robust learned or uncertainty-aware capture-support scores informed by reach-avoid/escape geometry.
 
 ---
 
-# 7. First Map Review — 2026-09-14
+# 6. Current CoCap Position after first SCREEN wave
 
-## 7.1 Mature enough for screening
-- Classical distributed/local-information encirclement skeleton.
-- HJI/reach-avoid + dominance/Apollonius PE skeleton.
-- PE geometry→matching/task-assignment genealogy.
-- Pursuit-specific MARL frontier around local perception, graph aggregation, target allocation and real-UAV deployment.
+## 6.1 Claims that are no longer defensible as standalone novelty
 
-None is marked `SATURATED`; all three Search agents were still finding meaningful new nodes.
+- local sensing / limited FOV by itself;
+- decentralized execution by itself;
+- multi-target pursuit by itself;
+- Transformer/attention for pursuit by itself;
+- graph/GAT aggregation by itself;
+- target selection/allocation by itself;
+- obstacles by themselves;
+- continuous/physical UAV actions by themselves;
+- real-UAV pursuit deployment by itself;
+- Apollonius/game geometry + RL by itself.
 
-## 7.2 Most undercovered branches
-1. Foundation layer: distributed control, coverage/Voronoi, general task allocation, collision avoidance/CBF/MPC.
-2. PE partial/incomplete information with local/noisy sensing and communication limits.
-3. Classical encirclement with literal boundaries/strategic obstacles.
-4. Full `coverage/search → detection → support/capture → post-capture recovery` task loops.
-5. Multi-target + local FOV + constrained communication + decentralized execution + real UAVs in one system.
-6. Repeated arrivals and online subgroup reallocation.
+## 6.2 Strongest screened novelty threats / nearest neighbors
 
-## 7.3 Clear genealogies
-- Cyclic pursuit → target enclosing → local/moving/nonholonomic encirclement: P0003 → P0004/P0005 → P0007/P0008.
-- HJI/reach-avoid → pairwise outcomes → matching/allocation: P0018/P0019 → P0024 → P0025/P0026/P0027.
-- Encirclement as geometry → formal capture bridge: P0003/P0004 → P0028/P0012.
-- Pursuit MARL realism: P0032/P0033 → P0034/P0036/P0038/P0040.
-- Classical geometry → theory-guided MARL: P0021/P0025 → P0037/P0038/P0042.
+- P0033 — heterogeneous scout/tracker + multi-target UAV pursuit;
+- P0034 — literal FOV/range/urban occlusion;
+- P0035 — Transformer + multi-target encirclement + scale generalization;
+- P0036 — unknown clutter + CTBR + real-UAV deployment;
+- P0040 — strategic self-play + real UAV;
+- P0042 — explicit allocation + subgroup pursuit + spatial capture geometry;
+- P0010 — concurrent patrol/monitoring + encirclement classical alternative;
+- P0012 — encirclement → interception classical bridge.
 
-## 7.4 Strongest CoCap-near novelty threats / neighbors to SCREEN first
-- P0033: heterogeneous multi-UAV multi-target pursuit with scout/tracker roles and real UAV demonstration.
-- P0034: strict limited-FOV/occlusion multi-UAV pursuit.
-- P0035: Transformer + target selection + large-scale multi-target encirclement.
-- P0036: partial observation + unknown obstacles + real-UAV zero-shot deployment.
-- P0038: local observation + limited communication + graph/QMIX + Apollonius structure.
-- P0042: explicit differentiable target allocation + subgroup pursuit + meaningful capture geometry (AUV domain).
-- P0011: classical dynamic allocation + whole-group multi-target encirclement.
-- P0010: persistent monitoring/patrol + encirclement.
-- P0012/P0028: strongest current encirclement→actual capture bridges.
+## 6.3 Candidate CoCap gap that survives SCREEN
 
-## 7.5 Current provisional CoCap boundary
-[AI判断] After Search only, CoCap should **not** claim novelty from any single ingredient: local sensing, decentralized execution, multi-target pursuit, Transformer/GNN aggregation, target allocation, obstacles, continuous UAV control, or real deployment all have precedents.
+[AI判断] The strongest surviving gap is a **task-lifecycle combination**, not one isolated algorithmic ingredient:
 
-[AI判断] More defensible potential contribution space is the **combination and task semantics**:
-- persistent local-information coverage/search;
-- detection-triggered dynamic support/capture role recruitment;
-- target-wise allocation under incomplete sensing;
-- geometrically valid encirclement/capture rather than mere proximity;
-- non-participating agents maintaining coverage;
-- post-capture recovery/resumption;
-- repeated arrivals and decentralized scalability.
+`persistent coverage/search`
+→ `genuinely local enemy detection`
+→ `dynamic capture/support recruitment`
+→ `target-wise allocation`
+→ `geometrically meaningful multi-agent capture`
+→ `non-participants continue coverage`
+→ `post-capture return to coverage`
+→ `repeated / changing target arrivals`
 
-This is a hypothesis for screening, not a novelty claim.
+under constrained communication, realistic UAV actions, obstacles, and possibly strategic evaders.
 
-## 7.6 Claims currently unsupported
-- “No prior work uses local sensing for multi-UAV pursuit.”
-- “No prior work combines task allocation and encirclement.”
-- “Transformer/GNN pursuit is novel.”
-- “Decentralized MARL pursuit has no real-UAV precedent.”
-- “Encirclement itself guarantees capture.”
-- “Post-capture coverage recovery is novel” — currently **undercovered**, not proven absent.
+This remains a **candidate gap, not a proven novelty claim** until the READ phase and targeted follow-up searches close the strongest uncertainties.
 
-## 7.7 Immediate next action
-Complete three small screening batches listed in `READING_LEDGER.md`. Do not start broad PDF reading until those screens normalize observation, communication, target strategy, capture definition, dynamics, deployment and publication status.
+## 6.4 Main unresolved assumptions for READ
+
+- exact sensing/communication stack in P0008/P0009/P0010/P0012;
+- theorem assumptions and team-level guarantees in P0024/P0025/P0028;
+- exact communication payload/decentralization semantics in P0033;
+- exact capture criterion and critic/global-state dependence in P0034;
+- target broadcast / assignment semantics in P0035;
+- real deployment stack in P0036/P0040;
+- allocation constraints and capture definition in P0042.
+
+## 6.5 Search gaps still open
+
+- post-capture coverage recovery;
+- strict local enemy sensing + multi-target + constrained communication + real UAV in one mature paper;
+- strategic learned evaders combined with swarm/multi-target pursuit;
+- local-information NvM PE guarantees;
+- boundary-assisted capture / strategic obstacle geometry;
+- dynamic coalition recruitment under changing/repeated targets.
