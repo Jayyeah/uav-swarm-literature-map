@@ -1,6 +1,6 @@
-# LITERATURE MAP v0.3
+# LITERATURE MAP v0.4
 
-> MASTER state after first SEARCH wave + first SCREEN wave. Canonical decisions here supersede earlier scaffold wording. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
+> MASTER state after first SEARCH wave + first SCREEN wave + completed R-PE-01 deep READ. Canonical decisions here supersede earlier scaffold wording. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
 
 ## Map conventions
 
@@ -98,65 +98,106 @@ Representative screened nodes: P0004, P0008, P0009, P0012.
 
 # 3. Pursuit–Evasion Foundations
 
-**Overall coverage:** PARTIAL-to-strong first skeleton; not saturated.
+**Overall coverage:** STRONG first CoCap-relevant theory skeleton after R-PE-01; not saturated.
 
 ## 3.1 Classical differential games
 **Coverage:** PARTIAL
 
-P0015 is retained as MAP-level genealogy organizer after SCREEN.
+P0015 is retained as MAP-level genealogy organizer after SCREEN. R-PE-01 confirmed that useful PE guarantees are strategy-quantified statements, not static geometric labels.
 
 ## 3.2 HJI / reachability / reach-avoid / viability
 **Coverage:** PARTIAL-to-strong
 
-Representative screened nodes: P0018, P0019.
+Representative nodes: P0018, P0019. P0019 has now been deeply read.
 
-[AI判断] Corrected structure:
-- P0018: backward reachable set / force target entry;
-- P0019: reach target while satisfying avoid/state constraints.
+[原文 + AI判断] P0019 establishes the key semantic distinction:
+- ordinary reachability asks whether target entry can be forced;
+- reach-avoid asks whether target entry can be forced **while satisfying state/avoid constraints up to the hitting time**;
+- the guarantee is quantified through a non-anticipative strategy against every admissible competing input;
+- the zero-sublevel set of the reach-avoid value function is the guaranteed feasible set.
 
-`reachable set` and `reach-avoid set` are not synonyms.
+Therefore:
+
+`reachable set ≠ reach-avoid set ≠ dominance region ≠ generic capture region`.
+
+[AI判断] For CoCap, a low-dimensional reach-avoid value is best treated as an oracle/teacher for **escape feasibility / capturability**, not as an online many-UAV HJI solver.
 
 ## 3.3 Capture / winning / dominance / barrier geometry
 **Coverage:** PARTIAL-to-strong
 
-Representative screened nodes: P0020, P0021, P0025.
+Representative screened/read nodes: P0020, P0021, P0025.
 
-[AI判断] Keep distinct:
+Keep distinct:
 - joint-state winning/reach-avoid set;
 - physical-space dominance region;
 - barrier separating game outcomes;
-- Apollonius geometry under simple-motion assumptions.
+- Apollonius/Voronoi geometry under simple-motion assumptions.
 
-P0021 is MAP after SCREEN: useful precision theorem, not a universal capture certificate.
+[AI判断] Dominance geometry is a useful primitive for certificates, but not a certificate by itself unless linked to a specific game objective and strategy guarantee.
 
 ## 3.4 Obstacles / constrained PE
 **Coverage:** PARTIAL
 
 Representative screened node: P0020.
 
-[AI判断] Obstacles can alter strategic dominance/interception geometry itself; they are not merely a downstream collision-avoidance add-on.
+[AI判断] Obstacles can alter strategic dominance/interception geometry itself; they are not merely a downstream collision-avoidance add-on. P0020 remains a deferred READ before any strong boundary-/obstacle-assisted capture claim.
 
 ## 3.5 Multi-pursuer / multi-evader allocation
-**Coverage:** PARTIAL-to-strong
+**Coverage:** PARTIAL-to-strong, with READ-confirmed core bridge
 
-Representative screened nodes: P0024, P0025.
+Representative READ nodes: P0024, P0025; organizer P0016.
 
-Two complementary branches are now explicit:
-1. **pairwise numerical HJI certificates → matching** (P0024);
-2. **analytical barriers / coalition winning regions → assignment** (P0025).
+R-PE-01 confirms two complementary scalability routes:
 
-These are the strongest theory sources for CoCap-style support recruitment / allocation abstractions, but their guarantees assume much cleaner information and dynamics than CoCap.
+1. **pairwise numerical HJI certificate → bipartite matching** (P0024)
+   - each defender–attacker pair contributes a guaranteed outcome edge;
+   - a maximum matching of size `m` guarantees at least `m` attackers can be stopped;
+   - this is a conservative decomposition guarantee, not an exact joint-state multiplayer optimum.
+
+2. **coalition winning certificate → coalition-target assignment** (P0025)
+   - a coalition-target edge exists only when that coalition can guarantee interception under the paper's assumptions;
+   - the assignment explicitly enforces target exclusivity and pursuer resource exclusivity;
+   - in P0025's specific simple-motion/convex-domain setting, the reduced 0–1 assignment is globally optimal for maximizing guaranteed intercepted evaders.
+
+[AI判断] The important abstraction for CoCap is therefore:
+
+`certificate → feasible edge/hyperedge → resource-constrained assignment`,
+
+not “nearest agents go to nearest target.”
 
 ## 3.6 Encirclement → capture bridge
-**Coverage:** PARTIAL but real
+**Coverage:** PARTIAL but READ-confirmed
 
-Representative screened node: P0028.
+Strong node: P0028.
 
-[AI判断] The valid bridge is not `ring formation → capture`. P0028 supports:
+R-PE-01 confirms that the valid bridge is:
 
-`closed angular enclosure + maintained geometry + positive capture radius + suitable speed/cardinality/initial-condition assumptions + inward approach → guaranteed capture`.
+`speed-aware angular closure / no escape gap`
+→ `maintain enclosure geometry`
+→ `radial/inward contraction`
+→ `enter positive capture radius`
+→ `capture`,
 
-This is directly relevant to escape-gap blocking and capture-support logic.
+under explicit speed/cardinality/initial-geometry/safety conditions.
+
+[原文 + AI判断] In P0028, group occupied angle `2π` means all escape headings are covered under the modeled speed ratios. It still does **not** imply finite-time capture without inward/radial hunting. Thus:
+
+`ring formation ≠ no-escape enclosure ≠ actual capture`.
+
+For CoCap evaluation, this suggests separating:
+1. closure / escape-gap;
+2. closure maintenance;
+3. contraction toward capture set;
+4. terminal capture.
+
+## 3.7 3D / heterogeneous / nonholonomic certificate extensions
+**Coverage:** PARTIAL, deferred
+
+Canonical seeds already present:
+- P0026 — 3D heterogeneous multiplayer reach-avoid + matching;
+- P0029 — homicidal-chauffeur/nonholonomic reach-avoid + pursuit enclosure functions.
+
+R-PE-01 identifies these as the correct next theory extensions before launching a new broad theory search.
 
 ---
 
@@ -169,34 +210,34 @@ This is directly relevant to escape-gap blocking and capture-support logic.
 [AI判断] Do not organize this branch primarily by backbone name. More informative pursuit-specific axes are **which classical assumption is relaxed or which system layer is learned**.
 
 ## 4.2 Decentralized policy execution under vehicle constraints
-Representative: P0032 — MUST READ, but not immediate first-wave queue.
+Representative: P0032 — MUST READ, but deferred.
 
 [AI判断] Decentralized actors can still depend on globally complete training data, full teammate state, external localization, or offboard execution.
 
 ## 4.3 Search/tracking roles + multi-target UAV pursuit
-Representative: P0033 — MUST READ.
+Representative: P0033 — MUST READ / next batch.
 
 [AI判断] Strong novelty-boundary predecessor, but roles are fixed and target state is propagated through communication; this is not dynamic coverage↔capture gating.
 
 ## 4.4 Literal local FOV / range / occlusion
-Representative: P0034 — MUST READ.
+Representative: P0034 — MUST READ / next batch.
 
 [AI判断] Local enemy discovery with finite distance/view angle/building occlusion already exists. P0034 shares detected target coordinates team-wide and uses a global-state critic, so `local discovery` is not the same as `strictly local target knowledge at execution`.
 
 ## 4.5 Variable-cardinality multi-target encirclement / target prioritization
-Representative: P0035 — MUST READ.
+Representative: P0035 — MUST READ / next batch.
 
 [AI判断] TERL is a major threat to broad claims about Transformer-based multi-target encirclement, target selection, or large-team generalization, but active targets are globally broadcast and evaders are heuristic.
 
 ## 4.6 Unknown clutter + physically meaningful actions + sim-to-real
-Representative: P0036 — MUST READ.
+Representative: P0036 — MUST READ, R-LM-02.
 
 [AI判断] Strong baseline for physical action / deployment claims; weaker on multi-target allocation and strategic evaders.
 
 ## 4.7 Theory-/geometry-guided MARL
 Representative: P0037 — MUST READ; P0038 — MAP.
 
-[AI判断] Combining Apollonius/dominance geometry with MARL is already established. Novelty, if any, must lie in harder assumptions or lifecycle integration rather than geometry-plus-RL alone.
+[AI判断] Combining Apollonius/dominance geometry with MARL is already established. After R-PE-01, P0037 becomes especially relevant if CoCap adopts a learned capturability / escape-margin head, but it should be read after the closest-neighbor R-LM-01 batch establishes whether this bridge is central to the final story.
 
 ## 4.8 Strategic opponent learning / self-play
 Representative: P0040 — MUST READ, preprint caveat.
@@ -204,7 +245,7 @@ Representative: P0040 — MUST READ, preprint caveat.
 [AI判断] Strong threat to claims around strategic learned evaders, self-play, and real-UAV pursuit; weak on swarm/multi-target allocation.
 
 ## 4.9 Explicit target allocation + subgroup pursuit/control
-Representative: P0042 — MUST READ.
+Representative: P0042 — MUST READ / next batch.
 
 [AI判断] Cross-domain AUV work is structurally one of the closest competitors because it couples differentiable allocation, subgroup pursuit, local observation and capture geometry. UAV-only novelty searches are insufficient.
 
@@ -216,32 +257,53 @@ Representative: P0030 — MAP after SCREEN.
 # 5. Cross-Branch Bridges
 
 ## 5.1 Encirclement ↔ PE
-**Coverage:** PARTIAL
+**Coverage:** PARTIAL-to-strong first bridge
 
 Strong nodes: P0012, P0028.
 
 Current synthesis:
 - geometric enclosure alone is insufficient;
-- actual capture depends on escape-direction closure plus dynamics/speed/capture-radius/initial geometry;
+- no-escape closure must be speed-aware and maintained;
+- actual capture additionally needs contraction into the capture set;
 - recent classical work already transitions from encirclement to interception, so novelty cannot rest on that transition alone.
 
 ## 5.2 Classical control / PE ↔ RL
 **Coverage:** PARTIAL
 
-Strong nodes: P0037 and supporting evidence from P0038.
+Strong learning-side node: P0037; PE teacher structures now READ-confirmed from P0019/P0024/P0025/P0028.
 
-[AI判断] Classical theory contributes structured certificates/priors; RL contributes most where exact models and full information break down.
+[AI判断] A promising bridge is not “hard-code classical controller into RL,” but use theory to define stronger labels/features/priors:
+- escape feasibility;
+- coalition capturability;
+- marginal value of a support agent;
+- no-escape gap;
+- near-barrier curriculum states.
 
-## 5.3 PE geometry ↔ learned allocation
+RL is then tasked with relaxing exact-model, full-state, simple-motion and static-assignment assumptions.
+
+## 5.3 PE certificate ↔ learned allocation
 **Coverage:** PARTIAL-to-strong seed set
 
-Strong chain: P0019 → P0024/P0025 → P0037/P0042.
+READ-confirmed chain:
 
-[AI判断] Candidate CoCap direction: replace brittle binary capturable/not-capturable edges with robust learned or uncertainty-aware capture-support scores informed by reach-avoid/escape geometry.
+`P0019 reach-avoid semantics`
+→ `P0024 pairwise certificate + matching`
+→ `P0025 coalition certificate + constrained assignment`
+→ candidate learned approximation in CoCap.
+
+[AI判断] Current strongest design hypothesis:
+
+`C(S,j) = robust/probabilistic capturability of coalition S for target j`,
+
+with support-agent marginal value
+
+`Δ_i(S,j)=C(S∪{i},j)-C(S,j)`.
+
+A practical CoCap utility would additionally account for coverage loss, alternative targets, collision/safety, and communication cost. This remains a **design hypothesis**, not yet an established method contribution.
 
 ---
 
-# 6. Current CoCap Position after first SCREEN wave
+# 6. Current CoCap Position after R-PE-01
 
 ## 6.1 Claims that are no longer defensible as standalone novelty
 
@@ -251,12 +313,15 @@ Strong chain: P0019 → P0024/P0025 → P0037/P0042.
 - Transformer/attention for pursuit by itself;
 - graph/GAT aggregation by itself;
 - target selection/allocation by itself;
+- generic capability-aware assignment by itself;
+- generic coalition capture by itself;
+- generic encirclement-to-capture by itself;
 - obstacles by themselves;
 - continuous/physical UAV actions by themselves;
 - real-UAV pursuit deployment by itself;
 - Apollonius/game geometry + RL by itself.
 
-## 6.2 Strongest screened novelty threats / nearest neighbors
+## 6.2 Strongest current novelty threats / nearest neighbors
 
 - P0033 — heterogeneous scout/tracker + multi-target UAV pursuit;
 - P0034 — literal FOV/range/urban occlusion;
@@ -265,40 +330,67 @@ Strong chain: P0019 → P0024/P0025 → P0037/P0042.
 - P0040 — strategic self-play + real UAV;
 - P0042 — explicit allocation + subgroup pursuit + spatial capture geometry;
 - P0010 — concurrent patrol/monitoring + encirclement classical alternative;
-- P0012 — encirclement → interception classical bridge.
+- P0012 — encirclement → interception classical bridge;
+- P0024/P0025 — classical capability/certificate-based assignment already exists;
+- P0028 — formal no-escape encirclement→capture already exists under strong assumptions.
 
-## 6.3 Candidate CoCap gap that survives SCREEN
+## 6.3 Candidate CoCap gap that survives R-PE-01
 
-[AI判断] The strongest surviving gap is a **task-lifecycle combination**, not one isolated algorithmic ingredient:
+[AI判断] The candidate gap **survives, but is narrower and more theory-aware**. The strongest remaining story is a lifecycle/system combination:
 
 `persistent coverage/search`
-→ `genuinely local enemy detection`
+→ `genuinely local / intermittent enemy detection`
+→ `learned or uncertainty-aware capturability estimation`
 → `dynamic capture/support recruitment`
-→ `target-wise allocation`
-→ `geometrically meaningful multi-agent capture`
+→ `target-wise resource allocation`
+→ `geometrically meaningful no-escape + capture execution`
 → `non-participants continue coverage`
 → `post-capture return to coverage`
 → `repeated / changing target arrivals`
 
 under constrained communication, realistic UAV actions, obstacles, and possibly strategic evaders.
 
-This remains a **candidate gap, not a proven novelty claim** until the READ phase and targeted follow-up searches close the strongest uncertainties.
+The stronger potential narrative is no longer:
 
-## 6.4 Main unresolved assumptions for READ
+> “we introduce assignment/capture to multi-UAV pursuit.”
 
-- exact sensing/communication stack in P0008/P0009/P0010/P0012;
-- theorem assumptions and team-level guarantees in P0024/P0025/P0028;
-- exact communication payload/decentralization semantics in P0033;
-- exact capture criterion and critic/global-state dependence in P0034;
-- target broadcast / assignment semantics in P0035;
-- real deployment stack in P0036/P0040;
-- allocation constraints and capture definition in P0042.
+It is closer to:
 
-## 6.5 Search gaps still open
+> “we relax classical capturability/assignment assumptions by learning and using capture-feasibility structure online under local sensing, dynamic coalitions and a persistent coverage↔capture lifecycle.”
 
-- post-capture coverage recovery;
-- strict local enemy sensing + multi-target + constrained communication + real UAV in one mature paper;
-- strategic learned evaders combined with swarm/multi-target pursuit;
-- local-information NvM PE guarantees;
-- boundary-assisted capture / strategic obstacle geometry;
-- dynamic coalition recruitment under changing/repeated targets.
+This remains a **candidate novelty**, not a proven claim.
+
+## 6.4 Classical assumptions that learning may need to relax
+
+R-PE-01 makes the following assumption gap explicit:
+
+| Classical assumption | CoCap-side relaxation candidate |
+|---|---|
+| exact/full current state | local/intermittent detection + neighbor information + uncertainty |
+| exact known dynamics/input bounds | model mismatch / learned or strategic evaders |
+| simple motion / instant heading | acceleration/turn-rate/UAV action constraints |
+| clean convex geometry | obstacles, boundaries, nonconvex free space |
+| static one-shot assignment | dynamic join/leave, reassignment, repeated arrivals |
+| binary deterministic certificate | robust/probabilistic learned score |
+| independent subgames | collision, resource, coverage and communication coupling |
+
+## 6.5 Focused gaps exposed by READ
+
+Do not launch broad search yet. Preserve as focused follow-up questions:
+- partial-observation / belief-space reach-avoid + coalition assignment;
+- robust/probabilistic capturability under local sensing and model mismatch;
+- dynamic coalition formation under target appearance/disappearance;
+- obstacle/boundary-assisted cooperative capture;
+- 3D/nonholonomic/higher-order coalition certificates.
+
+Before searching the last item broadly, inspect existing canonical P0026/P0029.
+
+## 6.6 Immediate next validation step
+
+R-LM-01 should now test whether the closest learning papers already approximate any of the above structure in practice:
+- P0033 — fixed scout/tracker vs true dynamic recruitment;
+- P0034 — local detection vs target sharing/global critic;
+- P0035 — target prioritization vs explicit coalition feasibility;
+- P0042 — differentiable allocation/subgroup pursuit vs true capturability-aware dynamic recruitment.
+
+Only after that comparison should MASTER decide whether a focused theory↔RL or partial-observation capturability search is justified.
