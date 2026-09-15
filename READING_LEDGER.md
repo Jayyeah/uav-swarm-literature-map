@@ -51,12 +51,12 @@ Screening note: `notes/screening/SC-20260914-PE01.md`
 |---|---|---|---|
 | P0015 | MAP | NOT_QUEUED | PE genealogy tutorial; useful organizer, not minimum theory READ |
 | P0016 | MUST READ | READ | compact review of barriers/winning regions/allocation; vocabulary/genealogy anchor |
-| P0018 | MUST READ | NOT_QUEUED | computational HJI reachable-set root; retain but defer after core bridge set |
+| P0018 | MUST READ | NOT_QUEUED | computational HJI reachable-set root; deferred |
 | P0019 | MUST READ | READ | canonical reach-avoid semantics and signed feasibility value |
-| P0020 | MUST READ | NOT_QUEUED | obstacles alter strategic dominance geometry; important but second wave |
-| P0021 | MAP | NOT_QUEUED | precise Apollonius scope; SCREEN already resolves main terminology issue |
+| P0020 | MUST READ | NOT_QUEUED | obstacles alter strategic dominance geometry; deferred |
+| P0021 | MAP | NOT_QUEUED | precise Apollonius scope; SCREEN resolves main terminology issue |
 | P0024 | MUST READ | READ | pairwise HJI certificates → matching / conservative team guarantee |
-| P0025 | MUST READ | READ | analytical coalition barrier → capacity/resource-constrained assignment |
+| P0025 | MUST READ | READ | analytical coalition barrier → resource-constrained assignment |
 | P0028 | MUST READ | READ | no-escape angular closure + inward approach → actual capture under conditions |
 
 **PE core READ completed:** P0016, P0019, P0024, P0025, P0028.
@@ -70,17 +70,15 @@ Screening note: `notes/screening/SC-20260914-LM01.md`
 | Paper | Decision | Read status | Map role |
 |---|---|---|---|
 | P0030 | MAP | NOT_QUEUED | current RL-PE genealogy organizer |
-| P0032 | MUST READ | NOT_QUEUED | decentralized execution / curriculum / physical-agent historical milestone |
-| P0033 | MUST READ | QUEUED | closest older multi-target UAV scout/tracker predecessor |
-| P0034 | MUST READ | QUEUED | literal local-FOV/range/urban-occlusion novelty competitor |
-| P0035 | MUST READ | QUEUED | Transformer + multi-target encirclement + selection/scaling competitor |
+| P0032 | MUST READ | NOT_QUEUED | decentralized execution / curriculum / physical-agent milestone |
+| P0033 | MUST READ | READ | fixed-role exploration + multi-target pursuit predecessor; target-state propagation |
+| P0034 | MUST READ | READ | strongest literal FOV/range/urban-occlusion information-assumption competitor |
+| P0035 | MUST READ | READ | strongest Transformer/multi-target scaling and soft target-selection competitor |
 | P0036 | MUST READ | QUEUED | unknown clutter + physical CTBR + real-UAV deployment milestone |
-| P0037 | MUST READ | NOT_QUEUED | strongest screened theory↔RL bridge; now eligible for focused READ after PE core |
-| P0038 | MAP | NOT_QUEUED | local observation + graph/GAT + constrained communication adjacent competitor |
+| P0037 | MUST READ | NOT_QUEUED | strongest screened theory↔RL bridge; focused follow-up candidate |
+| P0038 | MAP | NOT_QUEUED | local observation + graph/GAT + constrained-communication adjacent competitor |
 | P0040 | MUST READ | QUEUED | strategic self-play + real-UAV frontier; preprint caveat |
-| P0042 | MUST READ | QUEUED | strongest screened allocation + subgroup pursuit/control structural competitor |
-
-**LM minimum next READ set:** P0033, P0034, P0035, P0036, P0040, P0042.
+| P0042 | MUST READ | READ | strongest structural competitor: explicit assignment + hard capacity + subgroup-conditioned capture control |
 
 ---
 
@@ -95,75 +93,111 @@ Per-paper notes:
 - `notes/reading/P0025.md`
 - `notes/reading/P0028.md`
 
-## READ-confirmed theory bridge
+READ-confirmed bridge:
 
 `reach-avoid semantics`
-→ `signed/binary capturability certificate`
-→ `pairwise or coalition feasibility`
-→ `resource-constrained assignment / recruitment`
+→ `capturability certificate`
+→ `pairwise/coalition feasibility`
+→ `resource-constrained assignment`
 → `speed-aware no-escape enclosure`
 → `maintained inward contraction`
 → `capture`.
 
-Key confirmed points:
-- P0019: reach-avoid is a strategy-quantified `reach + avoid` guarantee, not ordinary reachability; the zero-sublevel set of the value function is the guaranteed reach-avoid set.
-- P0024: pairwise guaranteed outcomes can form a bipartite graph; a maximum matching of cardinality `m` guarantees at least `m` attackers can be stopped, rather than proving a globally optimal multiplayer joint strategy.
-- P0025: coalition feasibility can be converted into constrained 0–1 assignment; in its specific simple-motion/convex-domain model, the reduced assignment is globally optimal for maximizing guaranteed intercepted evaders.
-- P0028: geometric surrounding alone is insufficient. Strategy-independent capture of a faster evader requires speed-aware angular closure/no escape gap, maintained geometry, positive capture radius, sufficient geometry/cardinality conditions, and an inward/radial hunting component.
-
-## CoCap implication
-
-Current strongest theory-guided design hypothesis:
+Key design hypothesis exposed by this batch:
 
 `C(S,j) = estimated robust/probabilistic capturability of coalition S for target j`
 
-with marginal recruitment value
+and marginal support value
 
-`Δ_i(S,j)=C(S∪{i},j)-C(S,j)`,
+`Δ_i(S,j)=C(S∪{i},j)-C(S,j)`.
 
-then subtract coverage opportunity cost / competing-target cost / safety or communication cost.
+---
 
-This is a research-design hypothesis, not yet a committed CoCap architecture.
+# R-LM-01 — completed 2026-09-15
+
+Batch synthesis: `notes/synthesis/R-LM-01.md`
+
+Per-paper notes:
+- `notes/reading/P0033.md`
+- `notes/reading/P0034.md`
+- `notes/reading/P0035.md`
+- `notes/reading/P0042.md`
+
+## READ-confirmed closest competitors
+
+- **P0042 — strongest structural competitor:** explicit learned target assignment, hard per-target capacity, subgroup-conditioned control, and spatially meaningful capture. Its Sinkhorn layer makes assignment combinatorially feasible, but not capturability-feasible; subgroup demand is prescribed rather than inferred from current capture difficulty.
+- **P0034 — strongest information-assumption competitor:** finite sensing range, finite FOV, building occlusion, target loss and reacquisition. However, once one pursuer detects the target, its coordinate is shared team-wide; capture is any-one-agent proximity and the episode terminates.
+- **P0035 — strongest network/scalability competitor:** entity-wise Transformer, multi-target encirclement, soft target prioritization, and 15P/4E → 80P/20E evaluation without retraining. Active target positions are globally available and there is no explicit assignment/capturability layer.
+- **P0033 — strongest historical exploration+pursuit predecessor:** concurrent fixed scout/pursuer roles and multi-target simulation, but no dynamic role gate, no learned constrained target assignment, and target information is propagated through communication.
+
+## Mandatory distinction after R-LM-01
+
+Do not conflate:
+1. `target selection / preference`;
+2. `explicit assignment`;
+3. `dynamic coalition/support recruitment`;
+4. `capturability-aware recruitment`.
+
+R-LM-01 found **no coalition capturability certificate** in the four closest learning competitors.
+
+## Novelty impact
+
+Standalone claims now ruled out include:
+- local/FOV-limited UAV pursuit;
+- search→pursuit→reacquisition with MARL;
+- concurrent exploration/scouting + multi-target pursuit;
+- Transformer multi-target encirclement / target selection / large-team scaling;
+- learned explicit assignment + fixed-capacity subgroup pursuit;
+- meaningful geometric multi-agent capture criterion;
+- simply continuing to remaining targets after one target is completed.
+
+Surviving candidate gap is narrower:
+
+`persistent coverage/search`
+→ `genuinely local/intermittent target detection + belief/uncertainty`
+→ `learned uncertainty-aware coalition capturability`
+→ `dynamic join/leave support recruitment`
+→ `target-wise resource allocation`
+→ `no-escape / physically meaningful capture`
+→ `nonparticipants maintain coverage`
+→ `capturing coalition releases back to coverage`
+→ `repeated/changing target arrivals`.
+
+This remains a **candidate gap**, not a frozen novelty claim.
 
 ---
 
 # Remaining immediate READ queue
 
-R-PE-01 is complete. **12 queued papers remain** from the first READ wave.
+R-PE-01 and R-LM-01 are complete. **8 first-wave queued papers remain.**
 
-## R-LM-01 — Closest multi-target / sensing / allocation competitors (NEXT, 4)
-P0033, P0034, P0035, P0042
-
-Goal: delimit the strongest current CoCap novelty boundary on multi-target pursuit, local sensing, Transformer target selection, explicit allocation/subgroup control, and capture semantics.
-
-## R-CE-01 — Classical boundary and lifecycle (6)
+## R-CE-01 — Classical boundary and lifecycle (NEXT, 6)
 P0003, P0004, P0008, P0009, P0010, P0012
 
-Goal: establish exactly what classical encirclement already solves, where local sensing/decentralization is easier than CoCap, and what exists for persistence/interception.
+Goal: close the classical boundary on local sensing/decentralization, persistence/monitoring, and encirclement→interception before any focused search about post-capture recovery or lifecycle novelty.
 
 ## R-LM-02 — Physical deployment / strategic opponent frontier (2)
 P0036, P0040
 
 Goal: delimit physical-action/sim-to-real and strategic self-play claims.
 
-Recommended order after R-PE-01:
-1. R-LM-01;
-2. R-CE-01;
-3. R-LM-02;
-4. focused bridge/follow-up READ only if the first synthesis requires it.
+Recommended order:
+1. R-CE-01;
+2. R-LM-02;
+3. focused bridge/search decision after the next MASTER synthesis.
 
 ---
 
 # MUST READ but deferred / focused follow-up
 
-- P0018 — HJI computational root; read if computational reachability lineage needs deeper reconstruction.
-- P0020 — obstacle/dominance geometry; read before strategic obstacle/boundary claims.
-- P0026 — 3D heterogeneous multiplayer reach-avoid + matching; R-PE-01 identified it as the most natural extension for 3D/positive-radius coalition certificates.
-- P0029 — nonholonomic homicide-chauffeur reach-avoid + pursuit enclosure function; natural extension for action/dynamics realism.
-- P0032 — decentralized pursuit historical milestone; read if execution architecture becomes central.
-- P0037 — Apollonius + MARL theory-guided bridge; PE core prerequisite is now satisfied, but defer until R-LM-01 shows whether geometry-guided learning is central to the final CoCap story.
+- P0018 — HJI computational root.
+- P0020 — obstacle/dominance geometry.
+- P0026 — 3D heterogeneous multiplayer reach-avoid + matching.
+- P0029 — nonholonomic reach-avoid + pursuit enclosure function.
+- P0032 — decentralized pursuit historical milestone.
+- P0037 — Apollonius + MARL theory-guided bridge. R-PE-01 + R-LM-01 now make it a strong focused bridge candidate if `C(S,j)` becomes central.
 
-Do not automatically promote these into the immediate queue without a MASTER decision.
+Do not automatically promote these without a MASTER decision.
 
 ---
 
@@ -176,28 +210,23 @@ Do not automatically promote these into the immediate queue without a MASTER dec
 - P0030
 - P0038
 
-No paper in the first SCREEN wave was moved to ARCHIVE.
+No first-wave screened paper was moved to ARCHIVE.
 
 ---
 
-# Focused gaps exposed by R-PE-01
+# Focused gaps preserved after R-LM-01
 
-Do not open a broad search yet. Preserve these as later focused-search candidates:
-
-- partial-observation / belief-space reach-avoid + coalition assignment;
-- dynamic coalition formation under target appearance/disappearance and repeated arrivals;
-- robust/probabilistic capturability under local sensing and model mismatch;
+Do not open a broad search yet. Candidate focused searches are:
+- belief/uncertainty-aware coalition capturability under local sensing;
+- dynamic join/leave coalition formation with state-dependent capacity;
+- constrained-communication multi-target assignment/capture with repeated arrivals;
 - obstacle/boundary-assisted cooperative capture;
 - 3D/nonholonomic/higher-order coalition certificates.
 
-P0026 and P0029 already cover part of the last item and should be inspected before launching a new search.
+R-CE-01 should be completed before freezing search terms around lifecycle/post-capture recovery.
 
 ---
 
 # Zotero / PDF handling
 
-The 17 first-wave queued papers are already organized by the user. For subsequent READ batches:
-1. attach the corresponding PDFs to the child READ conversation when practical;
-2. prefer the formal publication PDF, with arXiv/author manuscript as fallback;
-3. keep GitHub `Pxxxx` IDs as canonical research-state identifiers;
-4. do not bulk-import unscreened SEARCH candidates solely because they appear in lineage notes.
+The first-wave READ papers are already organized by the user. For each next READ batch, attach only the corresponding PDFs when practical; keep GitHub `Pxxxx` IDs as canonical research-state identifiers and do not bulk-import unscreened candidates solely because they appear in lineage notes.
