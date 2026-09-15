@@ -30,16 +30,16 @@ Screening note: `notes/screening/SC-20260914-CE01.md`
 
 | Paper | Decision | Read status | Map role |
 |---|---|---|---|
-| P0003 | MUST READ | QUEUED | cyclic-pursuit target-enclosing genealogy / capture terminology correction |
-| P0004 | MUST READ | QUEUED | local-information / finite-sensing classical enclosing |
-| P0008 | MUST READ | QUEUED | decentralized estimation/control + 3D moving target + collision guarantee |
-| P0009 | MUST READ | QUEUED | FOV-constrained moving-target enclosing / direct sensing-boundary comparator |
-| P0010 | MUST READ | QUEUED | concurrent monitoring/patrol + encirclement; persistence boundary |
-| P0011 | MAP | NOT_QUEUED | whole-group / resource-balancing multi-target enclosure; not target-wise subgroup proof |
-| P0012 | MUST READ | QUEUED | strongest screened encirclement → interception bridge |
+| P0003 | MUST READ | READ | cyclic-pursuit target-enclosing genealogy / capture terminology correction |
+| P0004 | MUST READ | READ | finite-sensing/local-information classical enclosing |
+| P0008 | MUST READ | READ | decentralized estimation/control + 3D moving target + collision guarantee |
+| P0009 | MUST READ | READ | FOV-constrained moving-target enclosing; READ corrects experiment status to simulation only |
+| P0010 | MUST READ | READ | concurrent monitoring + encirclement; persistence boundary |
+| P0011 | MAP | NOT_QUEUED | whole-group/resource-balancing multi-target enclosure; not target-wise subgroup proof |
+| P0012 | MUST READ | READ | perception-aware encirclement → physical interception bridge |
 | P0013 | MAP | NOT_QUEUED | safety/reconfiguration frontier; later if hard safety becomes central |
 
-**CE minimum structural READ set:** P0003, P0004, P0008, P0009, P0010, P0012.
+**CE core READ completed:** P0003, P0004, P0008, P0009, P0010, P0012.
 
 ---
 
@@ -49,15 +49,15 @@ Screening note: `notes/screening/SC-20260914-PE01.md`
 
 | Paper | Decision | Read status | Map role |
 |---|---|---|---|
-| P0015 | MAP | NOT_QUEUED | PE genealogy tutorial; useful organizer, not minimum theory READ |
-| P0016 | MUST READ | READ | compact review of barriers/winning regions/allocation; vocabulary/genealogy anchor |
+| P0015 | MAP | NOT_QUEUED | PE genealogy tutorial; useful organizer |
+| P0016 | MUST READ | READ | compact review of barriers/winning regions/allocation |
 | P0018 | MUST READ | NOT_QUEUED | computational HJI reachable-set root; deferred |
 | P0019 | MUST READ | READ | canonical reach-avoid semantics and signed feasibility value |
 | P0020 | MUST READ | NOT_QUEUED | obstacles alter strategic dominance geometry; deferred |
-| P0021 | MAP | NOT_QUEUED | precise Apollonius scope; SCREEN resolves main terminology issue |
+| P0021 | MAP | NOT_QUEUED | precise Apollonius scope |
 | P0024 | MUST READ | READ | pairwise HJI certificates → matching / conservative team guarantee |
 | P0025 | MUST READ | READ | analytical coalition barrier → resource-constrained assignment |
-| P0028 | MUST READ | READ | no-escape angular closure + inward approach → actual capture under conditions |
+| P0028 | MUST READ | READ | no-escape angular closure + inward approach → capture |
 
 **PE core READ completed:** P0016, P0019, P0024, P0025, P0028.
 
@@ -71,7 +71,7 @@ Screening note: `notes/screening/SC-20260914-LM01.md`
 |---|---|---|---|
 | P0030 | MAP | NOT_QUEUED | current RL-PE genealogy organizer |
 | P0032 | MUST READ | NOT_QUEUED | decentralized execution / curriculum / physical-agent milestone |
-| P0033 | MUST READ | READ | fixed-role exploration + multi-target pursuit predecessor; target-state propagation |
+| P0033 | MUST READ | READ | fixed-role exploration + multi-target pursuit predecessor |
 | P0034 | MUST READ | READ | strongest literal FOV/range/urban-occlusion information-assumption competitor |
 | P0035 | MUST READ | READ | strongest Transformer/multi-target scaling and soft target-selection competitor |
 | P0036 | MUST READ | QUEUED | unknown clutter + physical CTBR + real-UAV deployment milestone |
@@ -82,7 +82,9 @@ Screening note: `notes/screening/SC-20260914-LM01.md`
 
 ---
 
-# R-PE-01 — completed 2026-09-15
+# Completed READ batches
+
+## R-PE-01 — completed 2026-09-15
 
 Batch synthesis: `notes/synthesis/R-PE-01.md`
 
@@ -103,17 +105,17 @@ READ-confirmed bridge:
 → `maintained inward contraction`
 → `capture`.
 
-Key design hypothesis exposed by this batch:
+Leading theory-guided design hypothesis:
 
 `C(S,j) = estimated robust/probabilistic capturability of coalition S for target j`
 
-and marginal support value
+with marginal support value
 
 `Δ_i(S,j)=C(S∪{i},j)-C(S,j)`.
 
 ---
 
-# R-LM-01 — completed 2026-09-15
+## R-LM-01 — completed 2026-09-15
 
 Batch synthesis: `notes/synthesis/R-LM-01.md`
 
@@ -123,81 +125,102 @@ Per-paper notes:
 - `notes/reading/P0035.md`
 - `notes/reading/P0042.md`
 
-## READ-confirmed closest competitors
+READ-confirmed competitor roles:
+- **P0042 — strongest structural competitor:** explicit learned target assignment, hard per-target capacity, subgroup-conditioned control and spatially meaningful capture. Capacity is prescribed and resource-feasible, not current-state capturability-feasible.
+- **P0034 — strongest information-assumption competitor:** finite FOV/range, building occlusion, loss/reacquisition; detected coordinate then becomes team-wide.
+- **P0035 — strongest network/scalability competitor:** Transformer, multi-target encirclement, soft target selection, 15P/4E → 80P/20E evaluation without retraining; active targets globally available.
+- **P0033 — strongest exploration+pursuit predecessor:** concurrent fixed scout/pursuer roles, but no dynamic gate or constrained assignment.
 
-- **P0042 — strongest structural competitor:** explicit learned target assignment, hard per-target capacity, subgroup-conditioned control, and spatially meaningful capture. Its Sinkhorn layer makes assignment combinatorially feasible, but not capturability-feasible; subgroup demand is prescribed rather than inferred from current capture difficulty.
-- **P0034 — strongest information-assumption competitor:** finite sensing range, finite FOV, building occlusion, target loss and reacquisition. However, once one pursuer detects the target, its coordinate is shared team-wide; capture is any-one-agent proximity and the episode terminates.
-- **P0035 — strongest network/scalability competitor:** entity-wise Transformer, multi-target encirclement, soft target prioritization, and 15P/4E → 80P/20E evaluation without retraining. Active target positions are globally available and there is no explicit assignment/capturability layer.
-- **P0033 — strongest historical exploration+pursuit predecessor:** concurrent fixed scout/pursuer roles and multi-target simulation, but no dynamic role gate, no learned constrained target assignment, and target information is propagated through communication.
-
-## Mandatory distinction after R-LM-01
-
-Do not conflate:
-1. `target selection / preference`;
-2. `explicit assignment`;
-3. `dynamic coalition/support recruitment`;
-4. `capturability-aware recruitment`.
-
-R-LM-01 found **no coalition capturability certificate** in the four closest learning competitors.
-
-## Novelty impact
-
-Standalone claims now ruled out include:
-- local/FOV-limited UAV pursuit;
-- search→pursuit→reacquisition with MARL;
-- concurrent exploration/scouting + multi-target pursuit;
-- Transformer multi-target encirclement / target selection / large-team scaling;
-- learned explicit assignment + fixed-capacity subgroup pursuit;
-- meaningful geometric multi-agent capture criterion;
-- simply continuing to remaining targets after one target is completed.
-
-Surviving candidate gap is narrower:
-
-`persistent coverage/search`
-→ `genuinely local/intermittent target detection + belief/uncertainty`
-→ `learned uncertainty-aware coalition capturability`
-→ `dynamic join/leave support recruitment`
-→ `target-wise resource allocation`
-→ `no-escape / physically meaningful capture`
-→ `nonparticipants maintain coverage`
-→ `capturing coalition releases back to coverage`
-→ `repeated/changing target arrivals`.
-
-This remains a **candidate gap**, not a frozen novelty claim.
+Mandatory distinction:
+`target selection` ≠ `explicit assignment` ≠ `dynamic coalition recruitment` ≠ `capturability-aware recruitment`.
 
 ---
 
-# Remaining immediate READ queue
+## R-CE-01 — completed 2026-09-15
 
-R-PE-01 and R-LM-01 are complete. **8 first-wave queued papers remain.**
+Batch synthesis: `notes/synthesis/R-CE-01.md`
 
-## R-CE-01 — Classical boundary and lifecycle (NEXT, 6)
-P0003, P0004, P0008, P0009, P0010, P0012
+Per-paper notes:
+- `notes/reading/P0003.md`
+- `notes/reading/P0004.md`
+- `notes/reading/P0008.md`
+- `notes/reading/P0009.md`
+- `notes/reading/P0010.md`
+- `notes/reading/P0012.md`
 
-Goal: close the classical boundary on local sensing/decentralization, persistence/monitoring, and encirclement→interception before any focused search about post-capture recovery or lifecycle novelty.
+### READ-confirmed classical boundary
 
-## R-LM-02 — Physical deployment / strategic opponent frontier (2)
+Classical/control encirclement already covers much more than static/full-state ring formation:
+- P0003: no-communication local relative geometry + 3-D enclosing formation + collision guarantee, but `target-capturing` is geometric terminology, not PE capture.
+- P0004: bounded unicycle + finite sensing + reachability/invariance + visibility preservation, but not unknown-target search.
+- P0008: moving 3-D target + decentralized estimator + collision-safe encirclement; distributed computation reconstructs effectively global quantities.
+- P0009: FOV-constrained keep-in-view reference/control; **simulation only** after READ correction; not intermittent target-loss belief handling.
+- P0010: concurrent known-target encirclement + fixed-spot monitoring + safety/optimization; not area coverage/search and not post-capture recovery.
+- P0012: noisy range-only hostile sensing → KF state estimation → explicit mode switch/radius contraction → real-UAV interception/direct impact; formal guarantee is not strategy-robust PE capture.
+
+### Mandatory distinctions after R-CE-01
+
+1. `distributed ≠ partial observation`.
+2. `finite sensing/FOV constraint ≠ intermittent unresolved target belief`.
+3. `monitoring/patrol + encirclement ≠ post-capture recovery`.
+4. `enclosing / target-capturing ≠ PE capture`.
+5. `partial raw measurement ≠ partial controller state` when communication/estimation reconstructs target state.
+6. `dynamic team cardinality robustness ≠ event-driven coalition join/leave/release`.
+
+### Lifecycle result
+
+R-CE-01 found **no** example of the full transition:
+
+`terminal capture/task completion`
+→ `coalition dissolution/release`
+→ `return to patrol/coverage`
+→ `ready for repeated arrivals`.
+
+P0010 occupies concurrent persistence, not task-completion-triggered recovery. P0012 occupies classical encirclement→actual interception, but engagement ends without resource release/recovery.
+
+---
+
+# Current immediate work queue
+
+After R-PE-01, R-LM-01 and R-CE-01, **2 first-wave READ papers remain**:
+
+## R-LM-02 — Physical deployment / strategic opponent frontier
 P0036, P0040
 
-Goal: delimit physical-action/sim-to-real and strategic self-play claims.
+Goal:
+- delimit physical-action / sim-to-real / real-UAV claims;
+- delimit strategic-opponent / self-play claims;
+- verify whether either changes the lifecycle/capturability story.
 
-Recommended order:
-1. R-CE-01;
-2. R-LM-02;
-3. focused bridge/search decision after the next MASTER synthesis.
+**R-LM-02 is no longer the immediate next action.**
+
+### Next action: FS-LIFE-01 focused SEARCH
+
+R-CE-01 leaves one central novelty uncertainty unresolved:
+
+> Has prior work already implemented target-triggered coalition formation → capture completion → coalition dissolution/release → resume coverage/patrol → repeated threats?
+
+Run one narrow lifecycle search before R-LM-02.
+
+Priority search themes:
+1. post-capture release / return-to-coverage;
+2. coalition/role dissolution and reassignment after capture;
+3. persistent surveillance/defense with repeated target arrivals.
+
+Do **not** reopen broad searches on generic local sensing, FOV, classical encirclement, or generic MARL pursuit.
 
 ---
 
-# MUST READ but deferred / focused follow-up
+# Deferred / focused follow-up
 
 - P0018 — HJI computational root.
 - P0020 — obstacle/dominance geometry.
 - P0026 — 3D heterogeneous multiplayer reach-avoid + matching.
 - P0029 — nonholonomic reach-avoid + pursuit enclosure function.
 - P0032 — decentralized pursuit historical milestone.
-- P0037 — Apollonius + MARL theory-guided bridge. R-PE-01 + R-LM-01 now make it a strong focused bridge candidate if `C(S,j)` becomes central.
+- P0037 — Apollonius + MARL theory-guided bridge; inspect if `C(S,j)` becomes a central method claim.
 
-Do not automatically promote these without a MASTER decision.
+Do not promote these automatically.
 
 ---
 
@@ -210,23 +233,28 @@ Do not automatically promote these without a MASTER decision.
 - P0030
 - P0038
 
-No first-wave screened paper was moved to ARCHIVE.
+No first-wave screened paper has been moved to ARCHIVE.
 
 ---
 
-# Focused gaps preserved after R-LM-01
+# Focused gaps after R-CE-01
 
-Do not open a broad search yet. Candidate focused searches are:
+## Immediate closure target
+- post-capture coalition release / return-to-coverage / repeated arrivals.
+
+## Preserve for later
 - belief/uncertainty-aware coalition capturability under local sensing;
 - dynamic join/leave coalition formation with state-dependent capacity;
-- constrained-communication multi-target assignment/capture with repeated arrivals;
+- constrained-communication multi-target assignment/capture;
 - obstacle/boundary-assisted cooperative capture;
 - 3D/nonholonomic/higher-order coalition certificates.
 
-R-CE-01 should be completed before freezing search terms around lifecycle/post-capture recovery.
+The first three may ultimately merge into one CoCap-specific focused search after lifecycle closure.
 
 ---
 
 # Zotero / PDF handling
 
-The first-wave READ papers are already organized by the user. For each next READ batch, attach only the corresponding PDFs when practical; keep GitHub `Pxxxx` IDs as canonical research-state identifiers and do not bulk-import unscreened candidates solely because they appear in lineage notes.
+For completed READ papers, the user may change `READ-QUEUE` → `READ` in Zotero when convenient. GitHub `Pxxxx` remains the canonical research-state identifier.
+
+For FS-LIFE-01, do **not** pre-download or bulk-import papers. Search first; only SCREEN-promoted candidates need Zotero/PDF handling.
