@@ -242,3 +242,85 @@ Identity merge policy used:
 5. first canonical admission is limited to **42 structural seeds** selected for screening, not every high-recall Search candidate.
 
 This keeps `PAPER_INDEX.csv` useful rather than turning a first-wave high-recall candidate pool into an unreviewed canonical database.
+
+---
+
+## SR-20260915-LIFE01 — Focused Lifecycle Recovery
+
+**Taxonomy node(s):** persistent mission lifecycle; dynamic coalition formation/release; patrol/coverage↔capture bridge; continual/repeated threats  
+**Status before round:** focused gap opened after R-CE-01  
+**Search date:** 2026-09-15  
+**Agent/session:** FS-LIFE-01 focused Search child
+
+### Narrow research question
+Has prior work implemented or formally analyzed:
+
+`persistent patrol/coverage/search`
+→ `target/threat detection`
+→ `temporary pursuit/capture subgroup`
+→ `capture/task completion`
+→ `coalition/role dissolution or resource release`
+→ `return to patrol/coverage`
+→ `ready for repeated/changing arrivals`?
+
+### Query families
+- post-capture return / resume / rejoin patrol or coverage
+- coalition dissolution / release / reassignment after capture
+- temporary coalition + pursuit/capture completion
+- persistent patrol/surveillance + repeated/recurring intruders
+- pop-up targets / stochastic alerts / recurring threats
+- return-to-search / redeployment / resource release synonyms
+
+Exact query strings, candidate-specific verification and chaining are preserved in `searches/lifecycle-recovery/SR-20260915-LIFE01.md`.
+
+### Yield and MASTER admission
+- **0** papers found that clearly close the entire seven-stage lifecycle in one system using the same fungible resource pool.
+- **1** strict historical direct hit for an explicit apprehension-completion → resume-patrol transition: Bradshaw et al. 2008.
+- **2** additional strong completion→dissolution/reuse structural hits: Liu et al. 2025 and HECTOR 2026.
+- Strong repeated-event/repeated-threat evidence from Liu, HECTOR, Duarte, Chandler and Bajaj.
+- MASTER admitted **9 screening candidates** as P0043–P0051; false-positive/duplicate publications remain only in the handoff.
+
+### Key boundary corrections
+- `post-capture return to patrol` by itself is **not novel**.
+- `task completion → coalition dissolution → reusable agents` is **not novel**.
+- `persistent patrol → pursuit → return → repeated intruders` exists without successful capture.
+- repeated stochastic/arbitrary threat arrivals under patrol/defense are established.
+- no retained paper at SEARCH depth clearly combines the full same-pool loop with nominal area coverage restoration after capture.
+
+### Closest candidate roles
+- P0043 — strongest structural completion→dissolve→reusable-pool + pop-up-target analogue.
+- P0044 — strongest capture-specific exploration/defense + dynamic coalition competitor.
+- P0045 — strongest continual-task completion→coalition-dissolution→reassignment result.
+- P0046 — clearest literal apprehension→resume-patrol historical precedent.
+- P0047 — clean classical patrol→event-response→return edge.
+- P0048–P0051 — supporting near-miss/repeated-arrival nodes.
+
+### Citation chaining / saturation
+Backward/forward and synonym sweeps converged on the same kill-web/coalition, patrol-return, repeated-alert and perimeter-defense lineages. New results increasingly became:
+1. remaining-target reassignment;
+2. generic dynamic MRTA without capture-triggered transitions;
+3. patrol→response without capture or without return;
+4. capture→episode termination.
+
+### Saturation judgment
+`SATURATED` for this focused branch at first-pass SEARCH depth.
+
+Reason: remaining uncertainty is now paper-internal lifecycle semantics in a small retained set, which is a SCREEN problem rather than a recall/search problem.
+
+### Current gap judgment
+`PARTIALLY SURVIVES`.
+
+The surviving intersection is not an isolated lifecycle edge. It is the integrated coupling of:
+
+`same fungible pool`
++ `persistent area coverage/search`
++ `target-triggered temporary capture coalition`
++ `explicit capture completion`
++ `completion-triggered release`
++ `same-agent restoration of nominal coverage`
++ `repeated arrivals`,
+
+especially when combined with local/intermittent target belief and capturability-aware recruitment.
+
+### Handoff
+`searches/lifecycle-recovery/SR-20260915-LIFE01.md`
