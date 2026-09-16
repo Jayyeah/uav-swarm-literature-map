@@ -173,52 +173,60 @@ Classical/control encirclement already covers much more than static/full-state r
 
 Search handoff: `searches/lifecycle-recovery/SR-20260915-LIFE01.md`
 
-MASTER judgment at SEARCH depth: **CoCap lifecycle gap PARTIALLY SURVIVES.**
+SEARCH found explicit antecedents for isolated lifecycle edges and reached near-saturation. Broad lifecycle SEARCH is now **CLOSED**. Reopen only if READ exposes a named predecessor/citation chain that could close the exact remaining intersection.
 
-SEARCH closes several weak claims:
-- post-apprehension `resume patrol` already exists historically (P0046 candidate);
-- task completion → coalition dissolution/reusable resource pool already exists (P0043/P0045 candidates);
-- persistent patrol → pursuit → return under repeated intruders exists without capture (P0048 candidate);
-- repeated stochastic/arbitrary threat arrivals under patrol/defense are established (P0050/P0051 candidates).
+---
 
-What remains unclosed is the integrated same-pool intersection:
+# S-LIFE-01 — focused SCREEN completed 2026-09-16
+
+Screening note: `notes/screening/SC-20260915-LIFE01.md`
+
+MASTER judgment after SCREEN: **CoCap lifecycle gap PARTIALLY SURVIVES.**
+
+| Paper | Decision | Read status | Map role |
+|---|---|---|---|
+| P0043 | MUST READ | QUEUED | strongest explicit completion → coalition dissolution → reusable pool → replacement-arrival analogue; `uncommitted` is not coverage |
+| P0044 | MUST READ | QUEUED | strongest capture-specific lifecycle competitor; dynamic SWAT capture coalitions + immobilizing capture + post-capture reuse, but fixed SCOUT/SWAT roles |
+| P0045 | MAP | NOT_QUEUED | generic completion → dissolve → reassign under continual task arrivals; not return-to-coverage and not strong capture semantics |
+| P0046 | MUST READ | QUEUED | cleanest historical apprehension → post-success `resume patrolling` predecessor; human/policy mediated |
+| P0047 | MAP | NOT_QUEUED | clean same-agent patrol → alert response → patrol edge; no capture/coalition |
+| P0048 | MUST READ | QUEUED | closest same-pool patrol → local pursuit → same-agent patrol recovery → repeated-intruder near miss; no terminal capture |
+| P0049 | ARCHIVE | NOT_QUEUED | `Capture` mode is a false friend; successful prototype capturers are not released |
+| P0050 | MAP | NOT_QUEUED | repeated Poisson alert/service patrol lineage; no capture; exact return wording remains full-text detail |
+| P0051 | MAP | NOT_QUEUED | repeated online true capture/defense anchor; fixed roles and no temporary coalition-release lifecycle |
+
+### Lifecycle boundary after SCREEN
+
+Standalone novelty is dead for:
+- post-apprehension/post-capture return-to-patrol as an isolated transition;
+- completion-triggered coalition dissolution;
+- released resources becoming reusable;
+- repeated threat/task arrivals;
+- same-agent patrol → response/pursuit → patrol cycles;
+- actual capture followed by continued resource reassignment.
+
+No screened paper closes the integrated same-resource-pool loop:
 
 `persistent area coverage/search`
 → `target-triggered temporary capture coalition`
-→ `explicit capture completion`
-→ `completion-triggered release/dissolution`
-→ `same agents restore nominal coverage`
-→ `repeat under new arrivals`,
+→ `terminal capture/completion`
+→ `completion-triggered release`
+→ `same agents restore nominal area coverage/search`
+→ `repeat under new arrivals`.
 
-especially when coupled to intermittent/local target belief and capturability-aware recruitment.
-
-## S-LIFE-01 — NEXT SCREEN batch
-
-Screen these nine canonical candidates before any lifecycle READ:
-
-| Paper | Search-stage decision | Key screening role |
-|---|---|---|
-| P0043 | MUST READ candidate | strongest completion→dissolve→reusable-pool + pop-up-target structural analogue |
-| P0044 | MUST READ candidate | strongest capture-specific dynamic coalition / resource-defense competitor |
-| P0045 | MUST READ candidate | continual tasks + explicit coalition dissolution/reassignment + random arrivals |
-| P0046 | MUST READ candidate | clearest literal apprehension→resume-patrol historical precedent |
-| P0047 | MUST READ candidate | clean classical patrol→alert-response→return-to-patrol edge |
-| P0048 | MAP candidate | patrol→local detection→pursuit→return + repeated intruders, but no capture |
-| P0049 | MAP candidate | patrol/Capture/Pursue state-machine recovery; post-capture semantics uncertain |
-| P0050 | MAP candidate | persistent patrol + Poisson repeated alert arrivals |
-| P0051 | MAP candidate | repeated arbitrary intruder arrivals + capture/defense, no patrol return |
-
-S-LIFE-01 must decide which 2–5 papers, if any, deserve READ. Do not auto-promote all nine.
+The surviving candidate is therefore the **integration** of those primitives in one fungible swarm, especially when coupled to unresolved local target belief and capturability-aware recruitment.
 
 ---
 
 # Current immediate work queue
 
-### NEXT: S-LIFE-01 focused SCREEN
+## NEXT: R-LIFE-01 — Lifecycle closure READ (4)
 
-Goal: verify paper-internal semantics for capture completion, coalition dissolution, actual same-agent return to patrol/coverage, repeated arrivals, sensing/communication assumptions and execution autonomy.
+P0043, P0044, P0046, P0048
 
-### Deferred until S-LIFE-01 merge: R-LM-02
+Goal: close the exact novelty boundary on completion-triggered resource release, same-agent patrol/coverage restoration, repeated arrivals and fungible-resource semantics. This batch comes before R-LM-02 because it directly determines the main lifecycle novelty claim.
+
+## THEN: R-LM-02 — Physical deployment / strategic opponent frontier (2)
 
 P0036, P0040 remain `QUEUED`.
 
@@ -242,25 +250,17 @@ Do not promote these automatically.
 
 ---
 
-# MAP-only after SCREEN
+# MAP / ARCHIVE lifecycle notes
 
-- P0011
-- P0013
-- P0015
-- P0021
-- P0030
-- P0038
+Lifecycle MAP-only after S-LIFE-01: P0045, P0047, P0050, P0051.
 
-No first-wave screened paper has been moved to ARCHIVE.
+Lifecycle ARCHIVE: P0049.
 
 ---
 
-# Focused gaps after FS-LIFE-01
+# Focused gaps preserved after S-LIFE-01
 
-## Immediate closure target
-- verify whether any retained lifecycle candidate actually closes same-pool `capture completion → release → restore nominal coverage` under repeated arrivals.
-
-## Preserve for later
+- integrated same-pool coverage/search ↔ terminal capture ↔ release ↔ coverage restoration under repeated arrivals;
 - belief/uncertainty-aware coalition capturability under local sensing;
 - dynamic join/leave coalition formation with state-dependent capacity;
 - constrained-communication multi-target assignment/capture;
@@ -271,6 +271,4 @@ No first-wave screened paper has been moved to ARCHIVE.
 
 # Zotero / PDF handling
 
-Do **not** bulk-import the nine S-LIFE-01 candidates yet. SCREEN first. After MASTER merges S-LIFE-01, add only final MUST READ lifecycle papers to Zotero and attach PDFs for READ.
-
-GitHub `Pxxxx` remains the canonical research-state identifier.
+Add only the four R-LIFE-01 papers — P0043, P0044, P0046, P0048 — to the READ working set and attach their PDFs when practical. Keep GitHub `Pxxxx` as the canonical research-state identifier.
