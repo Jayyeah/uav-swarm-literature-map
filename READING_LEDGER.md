@@ -74,10 +74,10 @@ Screening note: `notes/screening/SC-20260914-LM01.md`
 | P0033 | MUST READ | READ | fixed-role exploration + multi-target pursuit predecessor |
 | P0034 | MUST READ | READ | strongest literal FOV/range/urban-occlusion information-assumption competitor |
 | P0035 | MUST READ | READ | strongest Transformer/multi-target scaling and soft target-selection competitor |
-| P0036 | MUST READ | QUEUED | unknown clutter + physical CTBR + real-UAV deployment milestone |
-| P0037 | MUST READ | NOT_QUEUED | strongest screened theory↔RL bridge; focused follow-up candidate |
+| P0036 | MUST READ | READ | strongest CoCap-relevant multi-UAV physical-deployment comparator: CTBR + calibrated quadrotor dynamics + 3 real pursuers; mocap/offboard/virtual-target caveat |
+| P0037 | MUST READ | NOT_QUEUED | strongest screened theory↔RL bridge; inspect only if `C(S,j)` becomes method-central |
 | P0038 | MAP | NOT_QUEUED | local observation + graph/GAT + constrained-communication adjacent competitor |
-| P0040 | MUST READ | QUEUED | strategic self-play + real-UAV frontier; preprint caveat |
+| P0040 | MUST READ | READ | strongest strategic-opponent comparator: bilateral SP→FSP→PFSP + onboard inference/physical learned opponent; preprint caveat |
 | P0042 | MUST READ | READ | strongest direct learning/allocation competitor: explicit assignment + hard capacity + subgroup-conditioned capture control |
 
 ---
@@ -288,20 +288,120 @@ Use only if final historical wording requires proof that a particular apprehendi
 
 ---
 
-# Current immediate work queue
+## R-LM-02 — completed 2026-09-16
 
-## NEXT: R-LM-02 — Physical deployment / strategic-opponent frontier (2)
+Batch synthesis: `notes/synthesis/R-LM-02.md`
 
-P0036, P0040 remain `QUEUED`.
+Per-paper notes:
+- `notes/reading/P0036.md`
+- `notes/reading/P0040.md`
 
-Goal:
-- delimit physical-action / sim-to-real / real-UAV claims;
-- delimit strategic-opponent / self-play claims;
-- determine whether either materially changes the information + capturability + lifecycle story.
+### Physical deployment boundary v1
+
+Learned UAV pursuit already occupies:
+- calibrated vehicle-dynamic simulation;
+- direct CTBR control;
+- zero-shot sim-to-real transfer;
+- external-localization real-UAV flight;
+- multi-UAV real pursuit execution through infrastructure-assisted state/compute (P0036);
+- onboard policy inference against a physical learned opponent (P0040).
+
+**P0036 — strongest CoCap-relevant multi-UAV physical-deployment competitor.** It uses three physical pursuers, CTBR, calibrated 6-DOF dynamics, obstacle scenarios and repeated hardware trials, but relies on mocap, offboard policy/EPN inference and a virtual evader.
+
+**P0040 — strongest strategic-opponent competitor.** It demonstrates bilateral learned pursuit/evasion with naive self-play, historical FSP and failure-prioritized PFSP; real execution uses onboard inference and a physical learned evader, but still relies on mocap and reports only 1v1 obstacle-free qualitative hardware validation. As of 2026-09-16 it remains an arXiv preprint/under-review work.
+
+Deployment ladder:
+1. kinematic simulation;
+2. vehicle-dynamic simulation;
+3. noisy/delayed sensing + actuator abstraction;
+4. SITL/HITL;
+5. external-localization real UAV;
+6. onboard-perception real UAV.
+
+P0036 and P0040 occupy variants of Level 5; neither closes Level 6.
+
+### Strategic-opponent boundary v1
+
+Opponent ladder:
+1. fixed scripted evader;
+2. randomized/reactive heuristic distribution;
+3. separately trained learned evader;
+4. current-policy self-play;
+5. historical/population self-play (FSP/PFSP);
+6. unseen-policy generalization / exploitability-oriented evaluation.
+
+P0040 reaches Level 5. It shows broader robustness across historical opponents and scripted cases, but **does not** establish low exploitability, Nash convergence, or robustness to independently trained unseen learned policies.
+
+Therefore standalone novelty is dead/occupied for:
+- real-UAV pursuit;
+- broad zero-shot sim-to-real pursuit;
+- continuous/physical CTBR pursuit;
+- trajectory-prediction-assisted pursuit;
+- broad unseen/variable-clutter pursuit;
+- learned strategic evaders;
+- self-play pursuit;
+- historical-policy/FSP/PFSP pursuit.
+
+The remaining deployment/opponent frontiers are stronger notions such as onboard-perception autonomy and unseen-policy/exploitability robustness, not CoCap’s current core claim.
+
+### Impact on CoCap novelty candidate
+
+**No structural change.** Neither P0036 nor P0040 contains a fungible coverage pool, target-wise coalition/resource assignment, `C(S,j)`-like coalition feasibility, terminal capture release, coverage restoration, or repeated arrivals.
+
+Current strongest candidate remains:
+
+**information + capturability + lifecycle coupling**.
+
+P0044 remains the strongest overall/lifecycle system competitor; P0042 remains the strongest direct learning/allocation-method competitor; P0036 and P0040 close the physical and strategic axes respectively.
+
+### Evaluation implications
+
+If strategic robustness is not the headline contribution, CoCap should at least evaluate against randomized heuristics plus a separately trained/held-out learned evader; a single deterministic scripted evader is now an avoidable weakness.
+
+If CoCap remains simulation-only, state that explicitly and do not imply sim-to-real/onboard autonomy. The most valuable simulation-only realism upgrade is Level-3-style delay/noise/dynamics perturbation rather than superficial deployment language.
 
 ---
 
-# Deferred / focused follow-up
+# First-stage literature-map closure
+
+**Status: BASICALLY CLOSED for the declared CoCap-near novelty axes.**
+
+Closed strongly enough for method design:
+- reach-avoid / capturability / assignment theory;
+- classical sensing/decentralization/interception;
+- closest learning target-selection/allocation/scaling competitors;
+- lifecycle recovery/reuse/repeated-arrival boundary;
+- physical action / sim-to-real / real-UAV boundary;
+- strategic learned-opponent / self-play boundary.
+
+No new broad SEARCH is recommended.
+
+Remaining reads are **claim-triggered only**:
+- P0037 if `C(S,j)` / theory-guided capturability becomes a concrete method core;
+- P0020 if obstacle-modified capturability becomes central;
+- P0026/P0029 if final claims require 3-D/nonholonomic formal capture certificates;
+- unseen-opponent/exploitability literature only if strategic robustness becomes a claimed contribution.
+
+---
+
+# Current immediate work queue
+
+## NEXT: MASTER consolidation / CoCap Novelty & Method Design Memo v1
+
+Synthesize the completed R-PE-01, R-LM-01, R-CE-01, R-LIFE-01 and R-LM-02 branches into one project-facing memo that fixes:
+- strongest competitors by axis;
+- dead vs surviving novelty claims;
+- recommended non-`first` novelty wording;
+- method hypothesis around `C(S,j)`, `Δ_i` and coverage opportunity cost;
+- lifecycle state/release semantics;
+- minimum evaluation matrix and ablations;
+- claim-triggered future READ gates.
+
+Do not launch another paper wave before this consolidation.
+
+---
+
+# Deferred / claim-triggered follow-up
 
 - P0018 — HJI computational root.
 - P0020 — obstacle/dominance geometry.
@@ -317,18 +417,18 @@ Do not promote these automatically.
 # MAP / ARCHIVE lifecycle notes
 
 Lifecycle MAP-only: P0045, P0047, P0050, P0051.
-
 Lifecycle ARCHIVE: P0049.
 
 ---
 
-# Focused gaps preserved after R-LIFE-01
+# Focused gaps preserved after first-stage closure
 
 - integrated same-pool coverage/search ↔ terminal capture ↔ release ↔ coverage restoration under repeated arrivals;
 - belief/uncertainty-aware coalition capturability under local sensing;
-- dynamic join/leave coalition formation with state-dependent capacity;
+- dynamic join/leave coalition formation with state-dependent capacity and coverage opportunity cost;
 - constrained-communication multi-target assignment/capture;
-- obstacle/boundary-assisted cooperative capture;
-- 3D/nonholonomic/higher-order coalition certificates.
+- obstacle/boundary-assisted cooperative capture if final method makes it central;
+- 3D/nonholonomic/higher-order coalition certificates if final formal claims require them;
+- unseen learned-opponent / exploitability robustness only if strategic robustness becomes a contribution.
 
 GitHub `Pxxxx` remains the canonical research-state identifier.
