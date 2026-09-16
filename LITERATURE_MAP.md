@@ -1,6 +1,6 @@
-# LITERATURE MAP v0.9
+# LITERATURE MAP v1.0
 
-> MASTER state after first SEARCH + SCREEN waves, completed R-PE-01 / R-LM-01 / R-CE-01 / R-LIFE-01 READ batches, and the closed FS-LIFE-01 → S-LIFE-01 lifecycle branch. Detailed evidence remains in `notes/reading/`, `notes/synthesis/`, and search/screening handoffs. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
+> MASTER first-stage closure after R-PE-01, R-LM-01, R-CE-01, FS-LIFE-01 → S-LIFE-01 → R-LIFE-01, and R-LM-02. Detailed evidence remains in `notes/reading/`, `notes/synthesis/`, and search/screening handoffs. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
 
 ## Map conventions
 
@@ -10,9 +10,27 @@ A `MUST READ` paper is not automatically in the immediate READ queue; `READING_L
 
 ---
 
-# 1. Multi-Agent / UAV Swarm Foundations
+# 1. Project-level closure status
 
-These background branches remain intentionally underdeveloped because current work is problem-boundary driven rather than a full general swarm-control survey.
+**First-stage CoCap-near literature map: BASICALLY CLOSED.**
+
+Closed strongly enough for method design and novelty positioning:
+- reach-avoid / capturability / coalition-feasibility / assignment theory;
+- classical sensing, decentralization, persistence and encirclement→interception;
+- closest learning competitors on local sensing, multi-target scale, allocation and subgroup control;
+- lifecycle release/reuse/return/repeated-arrival boundary;
+- physical-action / sim-to-real / real-UAV boundary;
+- strategic learned-opponent / self-play boundary.
+
+No new broad SEARCH is recommended.
+
+Remaining work is **claim-triggered only**, not another literature wave.
+
+---
+
+# 2. Multi-Agent / UAV Swarm Foundations
+
+These background branches remain intentionally underdeveloped because the project is problem-boundary driven rather than a general swarm-control survey.
 
 - distributed control & consensus — `UNSEARCHED`
 - formation / flocking — `UNSEARCHED`
@@ -21,13 +39,15 @@ These background branches remain intentionally underdeveloped because current wo
 - generic MRTA / coalition formation — only CoCap-relevant slices searched
 - collision avoidance / CBF / MPC — only encirclement/pursuit-relevant slices searched
 
+Do not expand these unless a final method claim directly depends on them.
+
 ---
 
-# 2. Classical Encirclement / Enclosing
+# 3. Classical Encirclement / Enclosing
 
-**Coverage:** PARTIAL-to-strong on CoCap-relevant sensing, decentralization, persistence and interception boundaries after R-CE-01.
+**Coverage:** PARTIAL-to-strong on CoCap-relevant sensing, decentralization, persistence and interception after R-CE-01.
 
-## 2.1 Geometric enclosing is mature and is not PE capture
+## 3.1 Geometric enclosing is mature and is not PE capture
 
 READ anchors: P0003, P0004, P0008, P0009.
 
@@ -44,51 +64,42 @@ Canonical terminology:
 
 `geometric target-capturing/enclosing ≠ no-escape enclosure ≠ PE/physical capture`.
 
-P0003's `target-capturing` is a lexical false friend: the result is target-centered enclosing/tracking formation, not forced capture.
+P0003's `target-capturing` is a lexical false friend: it is a target-centered enclosing/tracking formation, not forced capture.
 
-## 2.2 Distributed is not the same as partial observation
+## 3.2 Distributed is not the same as partial observation
 
 READ anchors: P0008, P0010, P0012.
 
-The map must distinguish:
+Distinguish:
 1. computation/decision decentralization;
 2. raw measurement locality;
 3. communication topology;
 4. reconstructed target/global state;
 5. residual uncertainty in each agent's decision-time belief.
 
-P0008 is the canonical counterexample to equating distributed execution with local target knowledge: decentralized estimators reconstruct global target/frame quantities. P0012 begins with noisy local ranges but filters them into a target-state estimate before control.
+P0008 is the canonical counterexample: decentralized computation reconstructs globally relevant target/frame quantities. P0012 similarly begins with local noisy ranges but filters them into target state before control.
 
-## 2.3 Sensing ladder
+## 3.3 Sensing ladder
 
-Canonical sensing levels:
 1. direct local relative measurement;
 2. finite range/FOV constraint;
 3. actual intermittent loss/occlusion;
 4. distributed/filtered global-state reconstruction;
 5. unresolved local belief/uncertainty retained at decision time.
 
-P0004/P0009 occupy level 2; P0034 occupies true loss/occlusion/reacquisition; P0008/P0012 show reconstruction. CoCap can no longer claim novelty from local sensing/FOV/range-only sensing alone.
+P0004/P0009 occupy level 2; P0034 demonstrates real loss/occlusion/reacquisition; P0008/P0012 show reconstruction. CoCap cannot claim novelty from local sensing/FOV/range-only sensing alone.
 
-## 2.4 Persistence already exists, but task-completion recovery is different
+## 3.4 Persistence and physical interception are already classical capabilities
 
-READ anchor: P0010.
-
-P0010 proves that distributed classical optimization can concurrently maintain known-target encirclement, fixed-spot monitoring and safety objectives.
+P0010 shows concurrent known-target encirclement + monitoring/safety optimization.
 
 Therefore:
 
 `monitoring/patrol + encirclement ≠ post-capture recovery`.
 
-Concurrent persistence is old. Lifecycle novelty, if any, must be tied to how the same resource pool is reallocated and restored after terminal completion.
+P0012 shows noisy range sensing → target estimation → encirclement → radius contraction → real-UAV direct-impact interception.
 
-## 2.5 Classical encirclement can transition to real interception
-
-READ anchor: P0012.
-
-P0012 couples noisy range sensing → KF target estimation → mode switching → hostile encirclement → radius contraction → real-UAV direct-impact interception.
-
-Thus the claim “classical encirclement cannot perform actual interception” is false.
+Therefore the claim “classical encirclement cannot transition to real interception” is false.
 
 P0012 and P0028 are complementary:
 - P0012: perception/control → physical interception;
@@ -96,72 +107,79 @@ P0012 and P0028 are complementary:
 
 ---
 
-# 3. Pursuit–Evasion Foundations
+# 4. Pursuit–Evasion Foundations
 
 **Coverage:** STRONG first CoCap-relevant theory skeleton after R-PE-01; not globally saturated.
 
-## 3.1 Reach-avoid semantics
+## 4.1 Reach-avoid semantics
 
 READ anchor: P0019.
 
 `reachable set ≠ reach-avoid set ≠ dominance region ≠ generic capture region`.
 
-Reach-avoid is a strategy-quantified guarantee of reaching a target while respecting avoid/state constraints. Its value function is useful for CoCap primarily as an oracle/teacher for feasibility or escape margin, not as a direct many-UAV online solver.
+Reach-avoid is strategy-quantified: reach the target while respecting avoid/state constraints. Its value is useful to CoCap as a possible oracle/teacher for feasibility or escape margin, not as a direct many-UAV online solver.
 
-## 3.2 Pairwise / coalition certificates → assignment
+## 4.2 Capturability certificate → assignment
 
 READ anchors: P0024, P0025.
 
-Two complementary routes are confirmed:
+Confirmed abstraction:
 
-1. `pairwise HJI outcome → bipartite feasible edge → maximum matching` (P0024). A matching of size `m` gives a conservative guarantee that at least `m` attackers can be stopped; it is not an exact joint multiplayer solution.
-2. `coalition winning certificate → coalition-target feasible hyperedge → constrained assignment` (P0025). In its model-specific simple-motion/convex-domain setting, resource/exclusivity-constrained assignment maximizes guaranteed intercepted evaders.
+`capturability certificate`
+→ `feasible edge/hyperedge`
+→ `resource-constrained assignment`.
 
-Canonical abstraction:
+P0024:
+`pairwise HJI outcome → bipartite feasible edge → maximum matching`.
+A matching of size `m` gives a conservative stopped-attacker guarantee, not an exact full multiplayer solution.
 
-`capturability certificate → feasible edge/hyperedge → resource-constrained assignment`.
+P0025:
+`coalition winning certificate → coalition-target feasible hyperedge → constrained assignment`.
+Within its model assumptions, assignment maximizes guaranteed intercepted evaders.
 
-## 3.3 Encirclement → capture requires more than a ring
+## 4.3 Encirclement → capture requires more than a ring
 
 READ anchor: P0028.
 
-Confirmed bridge:
+Confirmed chain:
 
 `speed-aware escape-gap closure`
 → `maintain closure`
 → `radial/inward contraction`
-→ `enter positive capture radius`
+→ `positive capture radius`
 → `capture`.
 
 Therefore:
 
 `ring formation ≠ no-escape enclosure ≠ actual capture`.
 
-## 3.4 Deferred theory extensions
+## 4.4 Deferred theory extensions
 
-- P0020 — obstacles alter strategic dominance geometry.
-- P0026 — 3-D heterogeneous multiplayer reach-avoid + matching.
+Claim-triggered only:
+- P0020 — obstacle-modified strategic dominance geometry;
+- P0026 — 3-D heterogeneous multiplayer reach-avoid + matching;
 - P0029 — nonholonomic/homicidal-chauffeur reach-avoid + pursuit enclosure functions.
-
-Inspect these before opening another broad theory search.
 
 ---
 
-# 4. Learning-Based Pursuit / Encirclement
+# 5. Learning-Based Pursuit / Encirclement
 
-**Coverage:** PARTIAL-to-strong around current CoCap nearest neighbors after R-LM-01.
+**Coverage:** STRONG around current CoCap nearest-neighbor axes after R-LM-01 + R-LM-02.
 
-Organize learning work by **which classical assumption/system layer is relaxed**, not by backbone name alone.
+Organize learning work by **which classical assumption/system layer is relaxed**, not by backbone name.
 
-## 4.1 Strongest current competitors by axis
+## 5.1 Strongest current competitors by axis
 
-- **P0042 — strongest direct learning/allocation-method competitor:** learned target preference + hard capacity-constrained assignment + subgroup-conditioned pursuit + spatial multi-agent capture.
-- **P0034 — information assumption:** finite range/FOV/building occlusion + target loss/reacquisition, followed by team-wide sharing after detection.
-- **P0035 — network/scalability:** Transformer entity processing + soft target selection + large team/target count transfer.
-- **P0033 — exploration+pursuit predecessor:** fixed scouts continue exploration while fixed pursuers conduct multi-target pursuit.
-- **P0036 / P0040 — physical/self-play frontier:** queued for R-LM-02.
+- **P0044 — strongest overall / lifecycle system-level competitor.** Persistent exploration + dynamic capture coalitions + real immobilizing capture + defense + post-capture resource reuse + hardware; decisive difference is fixed SCOUT/SWAT pools rather than one fungible coverage↔capture pool.
+- **P0042 — strongest direct learning/allocation-method competitor.** Learned target preference + hard capacity assignment + subgroup-conditioned control + spatial capture; capacity is prescribed/resource-feasible, not current-state capturability-feasible.
+- **P0034 — strongest local-information learning competitor.** Literal finite FOV/range/building occlusion + target loss/reacquisition; detected target coordinates then become team-wide.
+- **P0035 — strongest Transformer/scaling competitor.** Multi-target entity processing + soft target selection + large count transfer; active targets are globally available.
+- **P0036 — strongest CoCap-relevant multi-UAV physical-deployment competitor.** CTBR, calibrated 6-DOF dynamics, obstacle scenarios and three real pursuers; mocap/offboard inference/virtual target caveat.
+- **P0040 — strongest strategic-opponent competitor.** Bilateral self-play → FSP → PFSP, historical policy pools, onboard inference and physical learned opponent; currently preprint/under review.
+- **P0048 — closest same-pool lifecycle architecture near miss.** Homogeneous persistent patrol → local pursuit → same-agent patrol restoration → repeated intruders, but no terminal capture.
+- **P0033 — fixed-role exploration+pursuit predecessor.** Important against broad “search + pursuit” claims, but no fungible role switching or constrained allocation.
 
-## 4.2 Target selection, assignment and recruitment are different
+## 5.2 Selection, assignment, recruitment and capturability are different
 
 Mandatory distinction:
 
@@ -170,28 +188,26 @@ Mandatory distinction:
 ≠ `dynamic coalition/support recruitment`
 ≠ `capturability-aware recruitment`.
 
-P0042 is the closest learned analogue to a classical assignment pipeline, but its target capacity is prescribed and combinatorially feasible, not inferred from current-state capture feasibility.
+P0042 is the closest learned analogue to a classical assignment pipeline, but its target capacity is prescribed rather than inferred from current-state capture feasibility.
 
-R-LM-01 found no coalition capturability certificate in the four closest learning papers.
+P0044 allows utility-driven adaptive coalition cardinality, so **adaptive coalition size alone is not novel**. Its K-serial stability concerns allocation utility/stability, not a strategy-quantified current-state capture guarantee.
 
-## 4.3 Theory-guided learning bridge
+## 5.3 Theory-guided learning bridge
 
-READ-confirmed classical chain:
+READ-confirmed theory:
 
 `P0019 reach-avoid semantics`
 → `P0024 pairwise certificate + matching`
 → `P0025 coalition certificate + assignment`.
 
-Closest learned structural analogue:
+Closest learned structure:
 
 `P0042 learned preference`
 → `fixed-capacity assignment`
 → `assignment-conditioned control`
 → `terminal spatial capture test`.
 
-The remaining semantic gap is **capture-feasibility estimation under realistic/local uncertainty**.
-
-Leading design hypothesis:
+Leading CoCap design hypothesis:
 
 `C(S,j)=P(capture target j | coalition S, belief/state, dynamics, obstacles)`
 
@@ -199,163 +215,141 @@ with marginal recruitment value
 
 `Δ_i(S,j)=C(S∪{i},j)-C(S,j)`.
 
-This is a design hypothesis, not yet an established contribution.
+This is a **design hypothesis**, not an established novelty claim.
+
+P0037 is claim-triggered: inspect it only if `C(S,j)` or a direct theory→RL bridge becomes method-central.
 
 ---
 
-# 5. Lifecycle / Persistent Mission Bridge
+# 6. Lifecycle / Persistent Mission Bridge
 
-**Focused SEARCH status:** `SATURATED / CLOSED` after FS-LIFE-01. Do not reopen broad lifecycle SEARCH by default.
+**SEARCH:** `SATURATED / CLOSED` after FS-LIFE-01.
 
-**SCREEN status:** S-LIFE-01 completed 2026-09-16.
+**SCREEN:** S-LIFE-01 completed.
 
-**READ status:** R-LIFE-01 completed 2026-09-16.
+**READ:** R-LIFE-01 completed.
 
 READ anchors: P0043, P0044, P0046, P0048.
 
-## 5.1 Lifecycle novelty boundary v1
+## 6.1 Lifecycle novelty boundary v1
 
-[AI判断] **PARTIALLY SURVIVES — coupling-level only.**
+**PARTIALLY SURVIVES — coupling-level only.**
 
-R-LIFE-01 confirms that essentially every isolated lifecycle transition already has a precedent:
-
-- **P0043:** completion → explicit coalition dissolution → return to a reusable uncommitted pool → pop-up replacement targets;
-- **P0044:** true capture/immobilization → dynamic SWAT coalition → same capture resources reassigned to another target/defense task, with hardware evidence;
-- **P0046:** successful apprehension followed by role-appropriate post-success behavior including `resume patrolling` at policy/workflow level;
-- **P0048:** one homogeneous pool executes persistent patrol → local pursuit subgroup → same-agent Patrol restoration → repeated intruders, but no terminal capture.
+Nearly every isolated lifecycle primitive has precedent:
+- P0043: completion → explicit coalition dissolution → reusable pool → replacement targets;
+- P0044: true capture → dynamic coalition → same capture resources reused/reassigned, including hardware;
+- P0046: post-apprehension successor behavior can include `resume patrolling`;
+- P0048: one homogeneous pool executes patrol → local pursuit subgroup → same-agent Patrol restoration → repeated intruders.
 
 Therefore standalone novelty is dead for:
 - post-capture/apprehension return to patrol;
 - completion-triggered coalition dissolution;
-- released resources becoming reusable;
-- post-capture resource reassignment;
-- same-agent patrol → pursuit/response → patrol;
-- repeated target/intruder arrivals;
-- dynamic capture coalitions in a persistent mixed mission;
-- adaptive subgroup cardinality in a broad sense;
-- local target detection triggering temporary response;
-- persistent coverage/patrol + pursuit as an isolated system combination.
+- released-resource reuse;
+- post-capture reassignment;
+- same-agent patrol→pursuit→patrol;
+- repeated arrivals;
+- dynamic capture coalitions in a persistent mission;
+- adaptive subgroup cardinality broadly;
+- local detection triggering temporary response;
+- persistent coverage/patrol + pursuit by itself.
 
-## 5.2 The four READ papers form an edge cover
-
-### P0043 — strongest release/reuse/repeat analogue
-
-Temporary type-constrained coalitions conduct synchronized strike. The paper literally states that after strike the coalition dissolves and each UAV returns to `uncommitted`; destroyed targets are replaced by pop-up targets.
-
-Mandatory distinction:
-
-`completion → uncommitted reusable pool`
-≠
-`completion → nominal coverage restored`.
-
-The terminal event is strike/destruction, not PE capture.
-
-### P0044 — strongest lifecycle / overall system-level competitor
-
-KS-COAL integrates:
-- SCOUT coverage/exploration;
-- online target discovery;
-- dynamic SWAT capture coalitions;
-- moving evasive targets;
-- Apollonius-based pursuit;
-- positive-radius capture causing target immobilization;
-- event-triggered re-coordination;
-- hardware post-capture reuse.
-
-Hardware shows the same SWAT resources capture one target, switch to another, and then return to resource encirclement/defense.
-
-This kills broad claims about:
-- first dynamic capture coalition;
-- first post-capture resource reuse;
-- first capture agents switching to another mission task.
-
-Its decisive CoCap difference is **fixed SCOUT/SWAT capability pools**:
-
-`SCOUT continues exploration`
-+
-`SWAT cycles among capture / defense`
-
-rather than:
-
-`same coverage agent → temporarily borrowed into capture → same agent restores coverage`.
-
-Also:
-
-`K-serial allocation stability ≠ current-state physical capturability certificate`.
-
-P0044 allows utility-induced changing SWAT cardinality, so CoCap cannot claim adaptive coalition size alone. The remaining method-level opportunity is **capturability-conditioned adaptive cardinality**.
-
-### P0046 — historical patrol-successor correction
-
-The Navy-pier exercise truly reaches successful apprehension. The paper then states that after apprehension each robot starts an appropriate successor task, with examples including `return to base` or `resume patrolling`.
-
-Safe statement:
-
-> post-apprehension patrol resumption has a historical policy/workflow precedent.
-
-Unsafe statement:
-
-> P0046 quantitatively demonstrates the same capturer restoring patrol/coverage.
-
-No identity-traced restoration metric or repeated intruder loop is shown.
-
-### P0048 — closest same-pool lifecycle near miss
-
-P0048 already has:
-
-`one homogeneous pool`
-→ `persistent patrol/coverage`
-→ `local camera detection`
-→ `local neighbor alert`
-→ `temporary pursuit subgroup`
-→ `excess pursuers leave`
-→ `same agents return to Patrol`
-→ `44 repeated crossings over 24 h`.
-
-Nonparticipants keep patrolling.
-
-The decisive missing edge is **terminal capture**: return is loss/timeout driven, not capture-completion driven.
-
-If a genuine terminal capture replaced that trigger, the lifecycle state-machine skeleton would be very close to CoCap. What would still remain methodologically distinct is capturability-aware recruitment, target-wise resource conflict/assignment, and uncertainty-aware capture feasibility.
-
-## 5.3 Same-pool lifecycle audit
+## 6.2 Same-pool audit
 
 Exact question:
 
-> Are the agents maintaining nominal coverage/search the same fungible resources temporarily borrowed into a capture coalition and then, after terminal capture, released back into nominal coverage for later arrivals?
+> Are nominal coverage/search agents the **same fungible resources** temporarily borrowed into a capture coalition and, after terminal capture, released back to nominal coverage for later arrivals?
 
 READ result:
 - P0043: reusable yes; nominal coverage no; PE capture no.
-- P0044: true capture and reuse yes; same exploration/capture pool no.
-- P0046: apprehension and patrol successor yes; autonomous same-agent/repeated loop unproven.
+- P0044: true capture/reuse yes; same exploration/capture pool no.
+- P0046: apprehension + patrol successor yes; autonomous same-agent/repeated restoration unproven.
 - P0048: same pool + coverage + return + repeat yes; terminal capture no.
 
-[AI判断] **No exact closure among the four READ papers.** Combined with the saturated focused branch, the exact integrated loop remains unfound. This is a bounded literature-search conclusion, not a theorem that no prior work exists.
+**No exact closure was found in the closed lifecycle branch.** This is a bounded search conclusion, not a universal proof of nonexistence.
 
-## 5.4 Strongest competitors after R-LIFE-01
+## 6.3 Lifecycle distinctions that must remain canonical
 
-- **Strongest lifecycle / overall system-level competitor: P0044 KS-COAL.**
-- **Closest same-pool lifecycle architecture: P0048 Duarte et al.**
-- **Strongest direct learning/allocation-method competitor: P0042 Yang et al.**
-- **Strongest local-information learning competitor: P0034 Peng et al.**
+1. `reusable uncommitted pool ≠ nominal-task restoration`.
+2. `post-capture reassignment ≠ same-agent return to coverage`.
+3. `policy-level patrol successor ≠ quantitatively demonstrated coverage recovery`.
+4. `task-allocation stability ≠ current-state capturability`.
+5. `loss/timeout-triggered patrol return ≠ terminal-capture-triggered release`.
+6. `behavioral pursuit subgroup ≠ explicit capture coalition`.
+7. `fixed heterogeneous role pools ≠ fungible coverage↔capture resource pool`.
 
-P0044 is now more important than P0042 for the **overall novelty boundary**, while P0042 remains more important for the **learned allocation/control mechanism** comparison.
-
-## 5.5 Lifecycle SEARCH stays closed
-
-No R-LIFE-01 paper exposed a citation chain that plausibly closes the exact remaining same-pool terminal-capture/restoration intersection.
-
-Record-only named precision chain from P0046:
-- Johnson et al., ICRA 2008 — *Human-robot coordination through dynamic regulation*;
-- Johnson et al., DHMS 2008 — *Coordinated operations in mixed teams of humans and robots*.
-
-Do not reopen lifecycle SEARCH unless final historical wording requires identity-level proof of patrol resumption.
+Lifecycle SEARCH stays closed by default.
 
 ---
 
-# 6. Current CoCap Novelty Boundary
+# 7. Physical Deployment Boundary v1
 
-## 6.1 Standalone claims that are no longer defensible
+READ anchors: P0036, P0040.
+
+## 7.1 Deployment realism ladder
+
+1. kinematic simulation;
+2. vehicle-dynamic simulation;
+3. noisy/delayed sensing + actuator abstraction;
+4. SITL/HITL;
+5. external-localization real UAV;
+6. onboard-perception real UAV.
+
+Current anchors:
+- **P0036:** Level 5 variant — three physical pursuers, calibrated 6-DOF dynamics and CTBR, but external mocap + offboard actor/EPN + virtual evader.
+- **P0040:** Level 5 variant — external mocap + onboard inference + physical learned opponent; 1v1, obstacle-free reported hardware, qualitative evidence.
+- **Neither reaches Level 6.**
+
+## 7.2 Boundary statement
+
+Learned UAV pursuit already occupies:
+- real-UAV execution;
+- broad zero-shot sim-to-real;
+- direct CTBR control;
+- calibrated vehicle dynamics;
+- trajectory-prediction-assisted pursuit;
+- unseen/variable-clutter pursuit in the broad layout-generalization sense.
+
+Therefore do **not** use these as standalone CoCap novelty claims.
+
+The stronger unclosed deployment frontier is full onboard sensing→decision→control without external target/localization infrastructure.
+
+If CoCap remains simulation-only, say so explicitly. The most valuable simulation-only realism upgrade is Level-3-style delay/noise/dynamics perturbation, not superficial deployment language.
+
+---
+
+# 8. Strategic-Opponent Boundary v1
+
+READ anchor: P0040; supporting comparisons P0034/P0033/P0036.
+
+## 8.1 Opponent realism ladder
+
+1. fixed scripted evader;
+2. randomized/reactive heuristic distribution;
+3. separately trained learned evader;
+4. current-policy self-play;
+5. historical/population self-play (FSP/PFSP);
+6. unseen-policy generalization / exploitability-oriented evaluation.
+
+Placement:
+- P0036: Level 2 at best;
+- P0034: Level 3 in evaluation via separately trained DDPG evader;
+- P0033: learned competitors but no historical population machinery;
+- **P0040: Level 5 training frontier**.
+
+P0040 shows current self-play, historical policy pools, FSP and failure-prioritized PFSP. It does **not** show low exploitability, Nash convergence, or robustness to independently trained unseen learned policies.
+
+Therefore standalone novelty is dead/occupied for:
+- learned strategic evader;
+- self-play pursuit;
+- historical-policy/FSP/PFSP pursuit.
+
+If strategic robustness is not CoCap's headline, a reasonable minimum is randomized heuristics + at least one separately trained learned evader, with a held-out learned policy in evaluation. A single deterministic scripted evader is now an avoidable weakness.
+
+---
+
+# 9. Current CoCap Novelty Boundary v1
+
+## 9.1 Standalone claims that are no longer defensible
 
 Do not claim novelty from any one of:
 - local sensing / finite range / FOV;
@@ -369,7 +363,7 @@ Do not claim novelty from any one of:
 - subgroup pursuit/control;
 - generic dynamic coalition formation;
 - generic capturability/capability-aware assignment;
-- adaptive capture subgroup size in the broad sense;
+- adaptive capture subgroup size broadly;
 - meaningful geometric multi-agent capture;
 - no-escape/capture geometry;
 - encirclement→physical interception;
@@ -377,23 +371,33 @@ Do not claim novelty from any one of:
 - task completion→coalition dissolution;
 - post-apprehension return to patrol;
 - post-capture resource reassignment;
-- continual/repeated target arrivals;
+- repeated target arrivals;
 - released-resource reuse;
 - same-agent patrol→response/pursuit→patrol cycling;
 - persistent coverage/patrol + pursuit by itself;
 - real-UAV pursuit;
-- continuous/physical actions;
-- self-play or game geometry + RL by itself.
+- zero-shot sim-to-real pursuit broadly;
+- continuous/physical/CTBR control;
+- trajectory-prediction-assisted pursuit;
+- unknown/unseen-clutter pursuit broadly;
+- learned strategic evaders;
+- self-play pursuit;
+- historical-policy/FSP/PFSP pursuit;
+- game geometry + RL by itself.
 
-## 6.2 What survives after R-LIFE-01
+## 9.2 Strongest surviving candidate
 
 Capturability by itself is old.
 
 Local sensing by itself is old.
 
-Lifecycle transitions by themselves are old.
+Lifecycle by itself is old.
 
-[AI判断] The strongest remaining candidate is the **information + capturability + lifecycle coupling**:
+Physical realism by itself is old.
+
+Self-play by itself is old.
+
+The strongest remaining candidate is the **information + capturability + lifecycle coupling**:
 
 `persistent coverage by one fungible swarm`
 → `execution-time local/intermittent target belief`
@@ -406,31 +410,31 @@ Lifecycle transitions by themselves are old.
 → `same agents restore nominal coverage`
 → `repeat under later arrivals`.
 
-Recommended non-`first` novelty wording v1:
+Recommended non-`first` novelty wording:
 
-> **CoCap addresses a persistent same-pool coverage–capture coordination problem in which UAVs operating under local/intermittent target information are temporarily recruited from nominal coverage according to capture-feasibility and mission opportunity cost, execute terminal capture, and are explicitly released back to restore coverage for subsequent target arrivals. The candidate novelty lies in coupling local information, coalition capturability and lifecycle-aware resource reuse, rather than in coverage, capture, coalition formation or post-capture return individually.**
+> **CoCap addresses a persistent same-pool coverage–capture coordination problem in which UAVs operating under local/intermittent target information are temporarily recruited from nominal coverage according to capture-feasibility and mission opportunity cost, execute terminal capture, and are explicitly released back to restore coverage for subsequent target arrivals. The candidate novelty lies in coupling local information, coalition capturability and lifecycle-aware resource reuse, rather than in sensing, physical control, self-play, capture, coalition formation or post-capture return individually.**
 
-Shorter method-facing wording:
+Short method-facing wording:
 
-> **A fungible UAV swarm dynamically borrows agents from persistent coverage only when they improve target capturability, then releases the same agents after confirmed capture to recover coverage under repeated target arrivals.**
+> **A fungible UAV swarm borrows agents from persistent coverage only when their marginal contribution improves target capturability enough to justify coverage cost, then releases the same agents after confirmed capture to recover coverage under repeated arrivals.**
 
 This remains a **candidate novelty**, not a universal priority claim.
 
-## 6.3 Risk of collapsing into systems integration
+## 9.3 Risk of collapsing into systems integration
 
 If the final method is only:
 
 `enemy detected → send K agents → capture → switch them back to coverage`,
 
-then P0044 + P0048 already cover most of the lifecycle structure and the contribution risks being judged as implementation integration.
+then P0044 + P0048 already cover most lifecycle structure and the contribution risks looking like systems integration.
 
-To support a stronger method claim, lifecycle/resource coupling should enter the decision rule through at least some of:
+To support a stronger method claim, put the coupling into the decision rule through at least some of:
 - `C(S,j)` or equivalent capture-feasibility score;
-- marginal support gain `Δ_i`;
+- marginal support value `Δ_i`;
 - coverage opportunity cost / coverage debt;
-- state-dependent/adaptive target capacity;
-- explicit terminal capture/release confidence;
-- target-wise resource constraints.
+- adaptive target capacity;
+- target-wise resource constraints;
+- explicit capture-confidence / release criterion.
 
 A natural abstraction is:
 
@@ -438,51 +442,79 @@ A natural abstraction is:
 
 or an equivalent constrained formulation.
 
-## 6.4 Evaluation implications from R-LIFE-01
+---
+
+# 10. Evaluation Implications
+
+## 10.1 Lifecycle metrics
 
 Coverage restoration must be measured, not narrated.
 
-Recommended lifecycle metrics:
+Track at minimum:
 1. pre-event nominal coverage baseline;
 2. peak event-conditioned coverage deficit;
 3. integrated coverage debt;
 4. borrowed-agent cost / agent-seconds removed from coverage;
-5. terminal capture → release latency;
-6. release → coverage-recovery time;
+5. capture→release latency;
+6. release→coverage-recovery time;
 7. recovered steady-state coverage ratio;
 8. nonparticipant coverage continuity during capture;
 9. repeated-arrival degradation as arrival frequency rises;
 10. recovery-before-next-event rate;
 11. long-horizon occupancy of coverage/support/capture/recovery modes.
 
-At least one benchmark should be long-horizon rather than one-shot:
+At least one long-horizon benchmark should use:
 
 `coverage → arrival → capture → release → recovery → next arrival → ...`
 
-with inter-arrival times varied across fully recovered, overlapping-recovery and sustained-load regimes.
+with inter-arrival time varied across recovered, overlapping-recovery and sustained-load regimes.
+
+## 10.2 Opponent robustness
+
+If strategic robustness is not headline novelty:
+- randomized/reactive heuristic diversity;
+- at least one separately trained learned evader;
+- preferably a held-out learned policy not used for pursuer training.
+
+If strategic robustness becomes a claim:
+- historical/population training or comparably diverse training;
+- unseen-policy cross-evaluation;
+- avoid equilibrium language without exploitability/best-response evidence.
+
+## 10.3 Deployment realism
+
+If simulation-only:
+- state the action/dynamics model as mission-level abstraction unless vehicle dynamics are truly represented;
+- do not imply sim-to-real/onboard autonomy;
+- if feasible add actuator lag/noise, observation delay/dropout, parameter randomization and strict rate/acceleration constraints.
 
 ---
 
-# 7. Immediate Work Plan
+# 11. Claim-Triggered Future READ Gates
 
-## NEXT — R-LM-02
+Do **not** promote automatically.
 
-Deep-read:
-- P0036 — unknown-environment / CTBR / real-UAV deployment boundary;
-- P0040 — strategic self-play / real-UAV frontier.
+- **P0037** — READ if `C(S,j)` / theory-guided capturability becomes a concrete central method claim.
+- **P0020** — READ if obstacle-modified capture feasibility becomes central.
+- **P0026** — READ if 3-D heterogeneous coalition certificates are needed for a formal claim.
+- **P0029** — READ if nonholonomic/higher-order pursuit-enclosure certificates become central.
+- **P0032** — READ only if historical decentralized-pursuit genealogy becomes necessary in writing.
+- **P0018** — READ only if computational HJI machinery itself becomes method-relevant.
+- unseen-opponent/exploitability literature — only if strategic robustness becomes a contribution.
 
-Purpose:
-- close physical-action / sim-to-real / real-UAV claims;
-- close strategic-opponent / self-play claims;
-- test whether either materially changes the current **information + capturability + lifecycle** candidate narrative.
+---
 
-## After R-LM-02
+# 12. Immediate Work Plan
 
-MASTER should assess whether the first literature-map phase is sufficiently closed to produce a consolidated CoCap novelty/method-design memo.
+## NEXT — MASTER CoCap Novelty & Method Design Memo v1
 
-Only open a final focused bridge READ/search if it is directly required by the chosen method claim, especially:
-- P0037 if learned/theory-guided `C(S,j)` becomes central;
-- P0020 if obstacle-modified capturability becomes central;
-- P0026/P0029 if final claims require 3-D/nonholonomic/higher-order capture certificates.
+Synthesize the closed first-stage map into a project-facing memo fixing:
+- strongest competitors by axis;
+- dead vs surviving claims;
+- exact non-`first` novelty wording;
+- method hypothesis around `C(S,j)`, `Δ_i`, coverage opportunity cost and release semantics;
+- minimum baseline/ablation/evaluation matrix;
+- which current CoCap implementation choices are structurally aligned or misaligned with the literature-derived problem definition;
+- claim-triggered future READ gates.
 
-Do not reopen broad SEARCH by default.
+Do not launch another paper wave before this consolidation.
