@@ -1,6 +1,6 @@
-# LITERATURE MAP v0.8
+# LITERATURE MAP v0.9
 
-> MASTER state after first SEARCH + SCREEN waves, completed R-PE-01 / R-LM-01 / R-CE-01 READ batches, FS-LIFE-01 focused SEARCH, and S-LIFE-01 focused SCREEN. Detailed evidence remains in `notes/reading/`, `notes/synthesis/`, and search/screening handoffs. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
+> MASTER state after first SEARCH + SCREEN waves, completed R-PE-01 / R-LM-01 / R-CE-01 / R-LIFE-01 READ batches, and the closed FS-LIFE-01 → S-LIFE-01 lifecycle branch. Detailed evidence remains in `notes/reading/`, `notes/synthesis/`, and search/screening handoffs. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
 
 ## Map conventions
 
@@ -80,7 +80,7 @@ Therefore:
 
 `monitoring/patrol + encirclement ≠ post-capture recovery`.
 
-Concurrent persistence is old. Lifecycle novelty, if any, must be tied to completion-triggered resource cycling rather than simultaneous objectives.
+Concurrent persistence is old. Lifecycle novelty, if any, must be tied to how the same resource pool is reallocated and restored after terminal completion.
 
 ## 2.5 Classical encirclement can transition to real interception
 
@@ -155,7 +155,7 @@ Organize learning work by **which classical assumption/system layer is relaxed**
 
 ## 4.1 Strongest current competitors by axis
 
-- **P0042 — structural:** learned target preference + hard capacity-constrained assignment + subgroup-conditioned pursuit + spatial multi-agent capture.
+- **P0042 — strongest direct learning/allocation-method competitor:** learned target preference + hard capacity-constrained assignment + subgroup-conditioned pursuit + spatial multi-agent capture.
 - **P0034 — information assumption:** finite range/FOV/building occlusion + target loss/reacquisition, followed by team-wide sharing after detection.
 - **P0035 — network/scalability:** Transformer entity processing + soft target selection + large team/target count transfer.
 - **P0033 — exploration+pursuit predecessor:** fixed scouts continue exploration while fixed pursuers conduct multi-target pursuit.
@@ -195,7 +195,7 @@ Leading design hypothesis:
 
 `C(S,j)=P(capture target j | coalition S, belief/state, dynamics, obstacles)`
 
-and marginal recruitment value
+with marginal recruitment value
 
 `Δ_i(S,j)=C(S∪{i},j)-C(S,j)`.
 
@@ -205,86 +205,151 @@ This is a design hypothesis, not yet an established contribution.
 
 # 5. Lifecycle / Persistent Mission Bridge
 
-**Focused SEARCH status:** `SATURATED` at first-pass depth. FS-LIFE-01 is closed; reopen only through a named citation chain exposed by READ.
+**Focused SEARCH status:** `SATURATED / CLOSED` after FS-LIFE-01. Do not reopen broad lifecycle SEARCH by default.
 
 **SCREEN status:** S-LIFE-01 completed 2026-09-16.
 
-Canonical lifecycle candidates: P0043–P0051.
+**READ status:** R-LIFE-01 completed 2026-09-16.
 
-## 5.1 Lifecycle gap judgment after SCREEN
+READ anchors: P0043, P0044, P0046, P0048.
 
-[AI判断] **PARTIALLY SURVIVES.**
+## 5.1 Lifecycle novelty boundary v1
 
-S-LIFE-01 verifies that nearly every isolated lifecycle edge already has an antecedent:
+[AI判断] **PARTIALLY SURVIVES — coupling-level only.**
 
-- **P0046:** successful apprehension followed by post-success behavior including `resume patrolling`;
-- **P0043:** completion-triggered temporary coalition dissolution, return to a reusable uncommitted pool, and replacement/pop-up targets;
-- **P0044:** true capture/immobilization followed by continued reuse/reassignment of the capturing SWAT pool;
-- **P0048:** same homogeneous agents execute patrol → local temporary pursuit → patrol recovery under repeated intruders;
-- **P0050:** persistent patrol under repeated Poisson alert arrivals;
-- **P0051:** online true capture/defense against arbitrary-time repeated intruders.
+R-LIFE-01 confirms that essentially every isolated lifecycle transition already has a precedent:
+
+- **P0043:** completion → explicit coalition dissolution → return to a reusable uncommitted pool → pop-up replacement targets;
+- **P0044:** true capture/immobilization → dynamic SWAT coalition → same capture resources reassigned to another target/defense task, with hardware evidence;
+- **P0046:** successful apprehension followed by role-appropriate post-success behavior including `resume patrolling` at policy/workflow level;
+- **P0048:** one homogeneous pool executes persistent patrol → local pursuit subgroup → same-agent Patrol restoration → repeated intruders, but no terminal capture.
 
 Therefore standalone novelty is dead for:
 - post-capture/apprehension return to patrol;
 - completion-triggered coalition dissolution;
-- reusable released resources;
-- repeated target/threat arrivals;
-- same-agent patrol → response/pursuit → patrol cycles;
-- capture followed by continued resource reassignment.
+- released resources becoming reusable;
+- post-capture resource reassignment;
+- same-agent patrol → pursuit/response → patrol;
+- repeated target/intruder arrivals;
+- dynamic capture coalitions in a persistent mixed mission;
+- adaptive subgroup cardinality in a broad sense;
+- local target detection triggering temporary response;
+- persistent coverage/patrol + pursuit as an isolated system combination.
 
-## 5.2 Strongest lifecycle competitors after SCREEN
+## 5.2 The four READ papers form an edge cover
 
-### P0043 — strongest explicit completion→dissolve→reuse→repeat analogue
+### P0043 — strongest release/reuse/repeat analogue
 
-A temporary combat coalition conducts synchronized strike; the coalition explicitly dissolves and UAVs return to `uncommitted`; destroyed targets are replaced by pop-up targets. The key distinction is semantic: `uncommitted` performs sneak-like movement and is **not** nominal area coverage/search.
+Temporary type-constrained coalitions conduct synchronized strike. The paper literally states that after strike the coalition dissolves and each UAV returns to `uncommitted`; destroyed targets are replaced by pop-up targets.
 
-### P0044 — strongest capture-specific lifecycle competitor
+Mandatory distinction:
 
-KS-COAL uses fixed SCOUT/SWAT capability roles. SWAT robots form dynamic task-specific capture coalitions, captured targets become immobile, and hardware scenarios show the same SWAT resources subsequently capturing another target or returning to resource encirclement/defense. It is the strongest threat to broad claims about dynamic capture coalitions and post-capture resource reuse. Its decisive difference from CoCap is that exploration and capture are assigned to fixed heterogeneous role pools rather than one fungible coverage↔capture swarm.
+`completion → uncommitted reusable pool`
+≠
+`completion → nominal coverage restored`.
 
-### P0046 — cleanest post-apprehension return-to-patrol predecessor
+The terminal event is strike/destruction, not PE capture.
 
-The field exercise reports successful apprehension and policy-level post-success tasks including `resume patrolling`. This kills any claim of being first to return to patrol after apprehension, even though the transition is human/policy-mediated rather than an autonomous distributed coalition lifecycle.
+### P0044 — strongest lifecycle / overall system-level competitor
 
-### P0048 — closest same-pool persistent-loop near miss
+KS-COAL integrates:
+- SCOUT coverage/exploration;
+- online target discovery;
+- dynamic SWAT capture coalitions;
+- moving evasive targets;
+- Apollonius-based pursuit;
+- positive-radius capture causing target immobilization;
+- event-triggered re-coordination;
+- hardware post-capture reuse.
 
-The same homogeneous aquatic-drone swarm maintains patrol, locally detects intruders, temporarily recruits pursuers, lets excess pursuers drop out, returns the same agents to `Patrol`, and experiences repeated intruder crossings. Its missing edge is decisive: pursuit ends on target exit/loss/timeout rather than terminal capture.
+Hardware shows the same SWAT resources capture one target, switch to another, and then return to resource encirclement/defense.
 
-## 5.3 Important negative controls
+This kills broad claims about:
+- first dynamic capture coalition;
+- first post-capture resource reuse;
+- first capture agents switching to another mission task.
 
-- **P0045 HECTOR — MAP:** generic subtask completion → coalition dissolution → reassignment under continual arrivals is established, but generic reassignment is not return-to-coverage and its `capture` semantics are not PE/immobilizing capture.
-- **P0047 — MAP:** same-agent patrol → alert response → patrol is old, but no terminal capture or temporary coalition.
-- **P0049 — ARCHIVE:** `Capture` is a state-name false friend; prototype capturers remain with the intruder rather than being released.
-- **P0050 — MAP:** repeated-alert patrol/service lineage, not capture.
-- **P0051 — MAP:** repeated online true capture with fixed defenders, not a temporary coalition-release lifecycle.
+Its decisive CoCap difference is **fixed SCOUT/SWAT capability pools**:
 
-## 5.4 Integrated lifecycle gap that survives
+`SCOUT continues exploration`
++
+`SWAT cycles among capture / defense`
 
-No screened paper closes the full same-resource-pool loop:
+rather than:
 
-`persistent area coverage/search by one fungible swarm`
-→ `target-triggered temporary capture coalition`
-→ `terminal capture/completion`
-→ `completion-triggered coalition/resource release`
-→ `the same agents restore nominal area coverage/search`
-→ `repeat under changing/new arrivals`.
+`same coverage agent → temporarily borrowed into capture → same agent restores coverage`.
 
-The remaining lifecycle candidate is therefore **integration**, not an isolated transition.
+Also:
 
-When coupled with the earlier PE and learning results, the stronger candidate becomes:
+`K-serial allocation stability ≠ current-state physical capturability certificate`.
 
-`persistent coverage/search by one fungible swarm`
-→ `genuinely local/intermittent target belief, not immediately globally reconstructed`
-→ `uncertainty-aware coalition capturability C(S,j)`
-→ `state-dependent support join/leave and adaptive coalition size`
-→ `target-wise resource-feasible assignment`
-→ `no-escape / physically meaningful capture`
-→ `nonparticipants maintain coverage`
-→ `terminal capture releases the same agents`
-→ `released agents restore nominal coverage`
-→ `repeat under new arrivals`.
+P0044 allows utility-induced changing SWAT cardinality, so CoCap cannot claim adaptive coalition size alone. The remaining method-level opportunity is **capturability-conditioned adaptive cardinality**.
 
-This remains a **candidate novelty**, not a frozen paper claim, until R-LIFE-01 deep READ closes the four strongest lifecycle predecessors.
+### P0046 — historical patrol-successor correction
+
+The Navy-pier exercise truly reaches successful apprehension. The paper then states that after apprehension each robot starts an appropriate successor task, with examples including `return to base` or `resume patrolling`.
+
+Safe statement:
+
+> post-apprehension patrol resumption has a historical policy/workflow precedent.
+
+Unsafe statement:
+
+> P0046 quantitatively demonstrates the same capturer restoring patrol/coverage.
+
+No identity-traced restoration metric or repeated intruder loop is shown.
+
+### P0048 — closest same-pool lifecycle near miss
+
+P0048 already has:
+
+`one homogeneous pool`
+→ `persistent patrol/coverage`
+→ `local camera detection`
+→ `local neighbor alert`
+→ `temporary pursuit subgroup`
+→ `excess pursuers leave`
+→ `same agents return to Patrol`
+→ `44 repeated crossings over 24 h`.
+
+Nonparticipants keep patrolling.
+
+The decisive missing edge is **terminal capture**: return is loss/timeout driven, not capture-completion driven.
+
+If a genuine terminal capture replaced that trigger, the lifecycle state-machine skeleton would be very close to CoCap. What would still remain methodologically distinct is capturability-aware recruitment, target-wise resource conflict/assignment, and uncertainty-aware capture feasibility.
+
+## 5.3 Same-pool lifecycle audit
+
+Exact question:
+
+> Are the agents maintaining nominal coverage/search the same fungible resources temporarily borrowed into a capture coalition and then, after terminal capture, released back into nominal coverage for later arrivals?
+
+READ result:
+- P0043: reusable yes; nominal coverage no; PE capture no.
+- P0044: true capture and reuse yes; same exploration/capture pool no.
+- P0046: apprehension and patrol successor yes; autonomous same-agent/repeated loop unproven.
+- P0048: same pool + coverage + return + repeat yes; terminal capture no.
+
+[AI判断] **No exact closure among the four READ papers.** Combined with the saturated focused branch, the exact integrated loop remains unfound. This is a bounded literature-search conclusion, not a theorem that no prior work exists.
+
+## 5.4 Strongest competitors after R-LIFE-01
+
+- **Strongest lifecycle / overall system-level competitor: P0044 KS-COAL.**
+- **Closest same-pool lifecycle architecture: P0048 Duarte et al.**
+- **Strongest direct learning/allocation-method competitor: P0042 Yang et al.**
+- **Strongest local-information learning competitor: P0034 Peng et al.**
+
+P0044 is now more important than P0042 for the **overall novelty boundary**, while P0042 remains more important for the **learned allocation/control mechanism** comparison.
+
+## 5.5 Lifecycle SEARCH stays closed
+
+No R-LIFE-01 paper exposed a citation chain that plausibly closes the exact remaining same-pool terminal-capture/restoration intersection.
+
+Record-only named precision chain from P0046:
+- Johnson et al., ICRA 2008 — *Human-robot coordination through dynamic regulation*;
+- Johnson et al., DHMS 2008 — *Coordinated operations in mixed teams of humans and robots*.
+
+Do not reopen lifecycle SEARCH unless final historical wording requires identity-level proof of patrol resumption.
 
 ---
 
@@ -304,65 +369,120 @@ Do not claim novelty from any one of:
 - subgroup pursuit/control;
 - generic dynamic coalition formation;
 - generic capturability/capability-aware assignment;
+- adaptive capture subgroup size in the broad sense;
 - meaningful geometric multi-agent capture;
 - no-escape/capture geometry;
 - encirclement→physical interception;
 - concurrent monitoring/scouting during pursuit;
 - task completion→coalition dissolution;
 - post-apprehension return to patrol;
+- post-capture resource reassignment;
 - continual/repeated target arrivals;
-- released-resource reassignment;
-- patrol→response/pursuit→patrol cycling;
+- released-resource reuse;
+- same-agent patrol→response/pursuit→patrol cycling;
+- persistent coverage/patrol + pursuit by itself;
 - real-UAV pursuit;
 - continuous/physical actions;
 - self-play or game geometry + RL by itself.
 
-## 6.2 Surviving candidate gap after S-LIFE-01
+## 6.2 What survives after R-LIFE-01
 
-[AI判断] The most defensible current candidate is the **information + capturability + lifecycle coupling**:
+Capturability by itself is old.
 
-> learn and use capture-feasibility structure under unresolved local target uncertainty to dynamically borrow agents from a persistent coverage swarm, execute meaningful capture, and release those same agents back to coverage so one fungible resource pool repeatedly cycles between coverage and capture.
+Local sensing by itself is old.
 
-This wording is intentionally narrower than “first dynamic coalition,” “first post-capture recovery,” or “first repeated pursuit.”
+Lifecycle transitions by themselves are old.
 
-## 6.3 Leading method implications
+[AI判断] The strongest remaining candidate is the **information + capturability + lifecycle coupling**:
 
-Theory/literature currently motivates, but does not require:
-- learned/probabilistic `C(S,j)` rather than fixed subgroup count;
-- marginal support gain `Δ_i(S,j)`;
-- coverage opportunity cost inside recruitment/allocation;
-- adaptive target capacity based on estimated capture difficulty;
-- explicit release criterion after terminal capture;
-- persistent/repeated-arrival evaluation rather than one-shot episode termination.
+`persistent coverage by one fungible swarm`
+→ `execution-time local/intermittent target belief`
+→ `estimate current coalition capture feasibility`
+→ `state-dependent support join/leave and adaptive coalition size`
+→ `target-wise resource-feasible assignment`
+→ `borrow agents only when marginal capture value justifies coverage opportunity cost`
+→ `terminal physically meaningful capture`
+→ `explicit release`
+→ `same agents restore nominal coverage`
+→ `repeat under later arrivals`.
+
+Recommended non-`first` novelty wording v1:
+
+> **CoCap addresses a persistent same-pool coverage–capture coordination problem in which UAVs operating under local/intermittent target information are temporarily recruited from nominal coverage according to capture-feasibility and mission opportunity cost, execute terminal capture, and are explicitly released back to restore coverage for subsequent target arrivals. The candidate novelty lies in coupling local information, coalition capturability and lifecycle-aware resource reuse, rather than in coverage, capture, coalition formation or post-capture return individually.**
+
+Shorter method-facing wording:
+
+> **A fungible UAV swarm dynamically borrows agents from persistent coverage only when they improve target capturability, then releases the same agents after confirmed capture to recover coverage under repeated target arrivals.**
+
+This remains a **candidate novelty**, not a universal priority claim.
+
+## 6.3 Risk of collapsing into systems integration
+
+If the final method is only:
+
+`enemy detected → send K agents → capture → switch them back to coverage`,
+
+then P0044 + P0048 already cover most of the lifecycle structure and the contribution risks being judged as implementation integration.
+
+To support a stronger method claim, lifecycle/resource coupling should enter the decision rule through at least some of:
+- `C(S,j)` or equivalent capture-feasibility score;
+- marginal support gain `Δ_i`;
+- coverage opportunity cost / coverage debt;
+- state-dependent/adaptive target capacity;
+- explicit terminal capture/release confidence;
+- target-wise resource constraints.
+
+A natural abstraction is:
+
+`U_i(S,j)=Δ_i(S,j)-λ·CoverageCost(i)`
+
+or an equivalent constrained formulation.
+
+## 6.4 Evaluation implications from R-LIFE-01
+
+Coverage restoration must be measured, not narrated.
+
+Recommended lifecycle metrics:
+1. pre-event nominal coverage baseline;
+2. peak event-conditioned coverage deficit;
+3. integrated coverage debt;
+4. borrowed-agent cost / agent-seconds removed from coverage;
+5. terminal capture → release latency;
+6. release → coverage-recovery time;
+7. recovered steady-state coverage ratio;
+8. nonparticipant coverage continuity during capture;
+9. repeated-arrival degradation as arrival frequency rises;
+10. recovery-before-next-event rate;
+11. long-horizon occupancy of coverage/support/capture/recovery modes.
+
+At least one benchmark should be long-horizon rather than one-shot:
+
+`coverage → arrival → capture → release → recovery → next arrival → ...`
+
+with inter-arrival times varied across fully recovered, overlapping-recovery and sustained-load regimes.
 
 ---
 
 # 7. Immediate Work Plan
 
-## NEXT — R-LIFE-01 lifecycle closure READ
+## NEXT — R-LM-02
 
-Deep-read only:
-- P0043;
-- P0044;
-- P0046;
-- P0048.
+Deep-read:
+- P0036 — unknown-environment / CTBR / real-UAV deployment boundary;
+- P0040 — strategic self-play / real-UAV frontier.
 
-Purpose: freeze the lifecycle novelty boundary with paper-internal evidence on resource fungibility, capture/completion semantics, exact post-completion robot fate, coverage/patrol restoration, repeated arrivals, sensing/communication assumptions and autonomy.
+Purpose:
+- close physical-action / sim-to-real / real-UAV claims;
+- close strategic-opponent / self-play claims;
+- test whether either materially changes the current **information + capturability + lifecycle** candidate narrative.
 
-## THEN — MASTER lifecycle synthesis
+## After R-LM-02
 
-Freeze `Lifecycle novelty boundary v1` and decide whether any named citation chain justifies reopening lifecycle SEARCH. Default is **do not reopen**.
+MASTER should assess whether the first literature-map phase is sufficiently closed to produce a consolidated CoCap novelty/method-design memo.
 
-## AFTERWARD — R-LM-02
+Only open a final focused bridge READ/search if it is directly required by the chosen method claim, especially:
+- P0037 if learned/theory-guided `C(S,j)` becomes central;
+- P0020 if obstacle-modified capturability becomes central;
+- P0026/P0029 if final claims require 3-D/nonholonomic/higher-order capture certificates.
 
-P0036 and P0040 remain queued to close:
-- physical-action / sim-to-real / real-UAV boundary;
-- strategic-opponent / self-play boundary.
-
-## Only after those steps
-
-Decide whether a final focused bridge READ/search is needed around:
-- P0037 / theory-guided MARL if `C(S,j)` becomes a central method claim;
-- local/belief-aware coalition capturability;
-- state-dependent coalition size and constrained communication;
-- 3D/nonholonomic certificate extensions if required by final method narrative.
+Do not reopen broad SEARCH by default.
