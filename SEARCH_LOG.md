@@ -1,3 +1,16 @@
+# 最新定向补漏：SR-20261022-GAP01
+
+2026-10-22。用户要求重新按当前论文场景查缺补漏，MASTER 与四路子 agent 分开 SEARCH → SCREEN → READ，随后 MASTER 审核关键原文并统一写入。
+
+- 起点：main `d03e9ff2cbcd1d946cf338079077825737cba93c`；旧 ID 保留，新增 P0052–P0075。
+- 精选 29 篇：旧库 5 篇 + 新入库 24 篇。25 篇已取原文，22 篇有 MASTER 关键原文审查，3 篇只 SCREEN；4 篇精选待全文。不是全搜索命中数统计。
+- 重大新增：密度/SPH/PGM、FSC2、SUNDER、W-MAPPO 与报警证据先例。未证明饱和，旧 BASICALLY CLOSED 只保留为历史结论。
+- 精确检索、作者/引用链和失败访问：[SEARCH_PROVENANCE.md](audits/20261022-cocap-gap-review/SEARCH_PROVENANCE.md)。
+- 原文来源、哈希和审查范围：[SOURCE_MANIFEST.csv](audits/20261022-cocap-gap-review/SOURCE_MANIFEST.csv)。未将访问拒绝页面记为全文。
+- 遗留缺口：[UNRESOLVED.md](audits/20261022-cocap-gap-review/UNRESOLVED.md)。实现/论文推进暂先冻结非必要扩搜，属于选型决策，非饱和判断。
+
+---
+
 # SEARCH LOG
 
 This file records reproducible search history and saturation evidence.
@@ -324,3 +337,4 @@ especially when combined with local/intermittent target belief and capturability
 
 ### Handoff
 `searches/lifecycle-recovery/SR-20260915-LIFE01.md`
+

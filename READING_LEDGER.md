@@ -1,3 +1,22 @@
+# 2026-10-22 MASTER 原文审计更新
+
+Round `SR-20261022-GAP01`。本段优先于历史概括，不覆盖旧证据记录。
+
+25 篇取得原文：23 篇 PDF、2 篇正文网页；另有 JAS 官方补充 PDF，共 26 条文件/来源记录。22 篇关键文献 MASTER 已核查原文，8 篇沿用此前附件全文审读，14 篇本轮新增/重审；3 篇只完成子 agent 全文 SCREEN。没有运行作者代码。
+
+| 状态 | ID | 依据 |
+|---|---|---|
+| MASTER READ，本轮新增/重审 | P0033, P0035, P0042, P0048, P0059, P0060, P0061, P0062, P0063, P0065, P0066, P0067, P0068, P0072 | 新阅读卡逐篇给范围；P0063 为作者完整网页，P0072 为官方正文网页，不能称 PDF |
+| MASTER READ，保留同会话前一轮全文证据 | P0044, P0052–P0058 | 原八篇附件及 JAS 补充；未冒称本轮重新下载全部 |
+| SCREEN，已取 PDF，未主审精读 | P0069, P0070, P0071 | MAP；不能承载核心 gap 排除性结论 |
+| SCREEN，preview only，未 READ | P0064, P0073, P0074, P0075 | 待全文；P0064/P0073 排队，不靠摘要补规则 |
+
+P0042 已恢复用户原 PDF 并重读，覆盖子 agent 临时 PARTIAL 状态。P0033 纠正首作者拼写及严格局部信息的旧过宽概括。P0035 保留原全目标信息与多人角度成功口径。
+
+[主综述](audits/20261022-cocap-gap-review/REVIEW_ZH.md) · [来源和精确范围](audits/20261022-cocap-gap-review/SOURCE_MANIFEST.csv) · [待补证](audits/20261022-cocap-gap-review/UNRESOLVED.md)。每张新阅读卡命名 `notes/reading/Pxxxx-GAP20261022.md`。
+
+---
+
 # READING LEDGER
 
 Tracks SCREEN/READ state. Long notes belong under `notes/screening/`, `notes/reading/`, and `notes/synthesis/`.
@@ -432,3 +451,4 @@ Lifecycle ARCHIVE: P0049.
 - unseen learned-opponent / exploitability robustness only if strategic robustness becomes a contribution.
 
 GitHub `Pxxxx` remains the canonical research-state identifier.
+

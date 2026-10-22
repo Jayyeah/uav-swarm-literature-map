@@ -1,3 +1,18 @@
+# 2026-10-22 MASTER 审计更新（优先于下方历史结论）
+
+[新综述](audits/20261022-cocap-gap-review/REVIEW_ZH.md) · [来源清单](audits/20261022-cocap-gap-review/SOURCE_MANIFEST.csv) · [检索过程](audits/20261022-cocap-gap-review/SEARCH_PROVENANCE.md)
+
+**本轮纠正此前 BASICALLY CLOSED 的宽泛结论。** 用户明确要求针对当前论文场景补漏；检索找到遗漏的局部密度/SPH、FSC2 与覆盖/拦截全过程近邻。下方第一阶段记录保留历史，涉及交集空白、最近竞争者和无须再搜索的判断，以本段及新综述为准。没有宣称全领域 SATURATED。
+
+- 新关键节点：P0059 AIS 多目标局部 PGM；P0060 RA-L DB-PGM；P0061 FSC2；P0062 DBI；P0063 TRO ADI；P0065 SUNDER；P0068 W-MAPPO。
+- 局部观测 + 同质群体 + 动态搜索/围捕分工不是空交集（FSC2、AIS）。密度法已有巡逻后发现和目标移除后再分布，不能按静态已知目标一概排除。
+- 衰减证据/报警招募/回巡逻有 P0067 Legras 2008 与 P0048；角色证据累积有 P0066 Wolf 2026。必须区分检测、跟踪、稳定包围、终端捕获，以及有限批再搜索、全任务覆盖恢复、重复到达。
+- Baseline：TERL 保留；优先预检 AIS-PGM，DBI 作较简单局部传统备选；kWTA 是有用的显式分配/更强信息参照，但不足以独自代表局部传统方法。FSC2 是核心创新边界，连续移植成本高。
+- 当前 defensible gap 是要实验检验的多人捕获/覆盖效率与信息折中，不能把未实现的 capturability/opportunity-cost 优化当既有贡献。
+- 覆盖状态：局部 density 与 hybrid search/pursuit 从遗漏改为 PARTIAL；证据/生命周期 PARTIAL；2026 frontier ACTIVE。未取得全文的候选在 UNRESOLVED.md，未升级 READ。
+
+---
+
 # LITERATURE MAP v1.0
 
 > MASTER first-stage closure after R-PE-01, R-LM-01, R-CE-01, FS-LIFE-01 → S-LIFE-01 → R-LIFE-01, and R-LM-02. Detailed evidence remains in `notes/reading/`, `notes/synthesis/`, and search/screening handoffs. Evidence labels: `[原文]`, `[Web核验]`, `[AI判断]`.
@@ -518,3 +533,4 @@ Synthesize the closed first-stage map into a project-facing memo fixing:
 - claim-triggered future READ gates.
 
 Do not launch another paper wave before this consolidation.
+
